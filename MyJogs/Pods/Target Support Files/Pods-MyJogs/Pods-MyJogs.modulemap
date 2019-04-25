@@ -1,0 +1,6 @@
+framework module Pods_MyJogs {
+  umbrella header "Pods-MyJogs-umbrella.h"
+
+  export *
+  module * { export * }
+}

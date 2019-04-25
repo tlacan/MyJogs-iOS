@@ -1,0 +1,6 @@
+framework module Pods_MyJogsUITests {
+  umbrella header "Pods-MyJogsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
