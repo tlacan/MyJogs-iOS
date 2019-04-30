@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D0B1F642277F8890054B15B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B1F632277F8890054B15B /* GoogleService-Info.plist */; };
 		1D1C3A7822716B750031A9BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7722716B750031A9BC /* AppDelegate.swift */; };
 		1D1C3A7A22716B750031A9BC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7922716B750031A9BC /* FirstViewController.swift */; };
 		1D1C3A7C22716B750031A9BC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7B22716B750031A9BC /* SecondViewController.swift */; };
@@ -39,6 +40,7 @@
 
 /* Begin PBXFileReference section */
 		072CF531330F4031A6C6450B /* Pods-MyJogsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJogsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyJogsTests/Pods-MyJogsTests.release.xcconfig"; sourceTree = "<group>"; };
+		1D0B1F632277F8890054B15B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1D1C3A7422716B750031A9BC /* MyJogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyJogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1C3A7722716B750031A9BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D1C3A7922716B750031A9BC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				1D1C3A8022716B760031A9BC /* Assets.xcassets */,
 				1D1C3A8222716B760031A9BC /* LaunchScreen.storyboard */,
 				1D1C3A8522716B760031A9BC /* Info.plist */,
+				1D0B1F632277F8890054B15B /* GoogleService-Info.plist */,
 			);
 			path = MyJogs;
 			sourceTree = "<group>";
@@ -180,7 +183,8 @@
 				1D1C3A7122716B750031A9BC /* Frameworks */,
 				1D1C3A7222716B750031A9BC /* Resources */,
 				55D2C290F753C2D7769EC72F /* [CP] Embed Pods Frameworks */,
-				1D1C3AA722716FC60031A9BC /* ShellScript */,
+				1D1C3AA722716FC60031A9BC /* Swift Lint */,
+				1D0B1F622277F5A10054B15B /* Crashlytics */,
 			);
 			buildRules = (
 			);
@@ -278,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D1C3A8422716B760031A9BC /* LaunchScreen.storyboard in Resources */,
+				1D0B1F642277F8890054B15B /* GoogleService-Info.plist in Resources */,
 				1D1C3A8122716B760031A9BC /* Assets.xcassets in Resources */,
 				1D1C3A7F22716B750031A9BC /* Main.storyboard in Resources */,
 			);
@@ -300,7 +305,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D1C3AA722716FC60031A9BC /* ShellScript */ = {
+		1D0B1F622277F5A10054B15B /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
+		1D1C3AA722716FC60031A9BC /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -309,6 +333,7 @@
 			);
 			inputPaths = (
 			);
+			name = "Swift Lint";
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -372,7 +397,9 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MyJogs/Pods-MyJogs-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bagel/Bagel.framework",
 				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -380,7 +407,9 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bagel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -595,6 +624,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = CYG87LWPBT;
 				INFOPLIST_FILE = MyJogs/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
