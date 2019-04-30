@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  MyJogs
+
+  Created by thomas lacan on 30/04/2019.
+  Copyright © 2019 thomas lacan. All rights reserved.
+*/
+
+"Main.App.Title" = "My Jogs";

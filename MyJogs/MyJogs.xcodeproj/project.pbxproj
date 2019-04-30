@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1D0B1F642277F8890054B15B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B1F632277F8890054B15B /* GoogleService-Info.plist */; };
+		1D0B1F6D227836E00054B15B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B1F6C227836E00054B15B /* Localizable.strings */; };
+		1D0B1F79227839550054B15B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B1F75227839550054B15B /* Strings.swift */; };
+		1D0B1F7A227839550054B15B /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B1F76227839550054B15B /* Assets.swift */; };
+		1D0B1F7B227839550054B15B /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B1F77227839550054B15B /* Fonts.swift */; };
+		1D0B1F7C227839550054B15B /* swiftgen.sh in Resources */ = {isa = PBXBuildFile; fileRef = 1D0B1F78227839550054B15B /* swiftgen.sh */; };
 		1D1C3A7822716B750031A9BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7722716B750031A9BC /* AppDelegate.swift */; };
 		1D1C3A7A22716B750031A9BC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7922716B750031A9BC /* FirstViewController.swift */; };
 		1D1C3A7C22716B750031A9BC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7B22716B750031A9BC /* SecondViewController.swift */; };
@@ -41,6 +46,11 @@
 /* Begin PBXFileReference section */
 		072CF531330F4031A6C6450B /* Pods-MyJogsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJogsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyJogsTests/Pods-MyJogsTests.release.xcconfig"; sourceTree = "<group>"; };
 		1D0B1F632277F8890054B15B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1D0B1F6C227836E00054B15B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		1D0B1F75227839550054B15B /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		1D0B1F76227839550054B15B /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		1D0B1F77227839550054B15B /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		1D0B1F78227839550054B15B /* swiftgen.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = swiftgen.sh; sourceTree = "<group>"; };
 		1D1C3A7422716B750031A9BC /* MyJogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyJogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1C3A7722716B750031A9BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D1C3A7922716B750031A9BC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +103,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D0B1F6B227836AA0054B15B /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				1D1C3A8022716B760031A9BC /* Assets.xcassets */,
+				1D0B1F6C227836E00054B15B /* Localizable.strings */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		1D0B1F6E2278370E0054B15B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1D1C3A7922716B750031A9BC /* FirstViewController.swift */,
+				1D1C3A7B22716B750031A9BC /* SecondViewController.swift */,
+				1D1C3A7D22716B750031A9BC /* Main.storyboard */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1D0B1F6F227837B90054B15B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1D0B1F70227837C30054B15B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1D0B1F71227837D40054B15B /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		1D0B1F74227839550054B15B /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				1D0B1F75227839550054B15B /* Strings.swift */,
+				1D0B1F76227839550054B15B /* Assets.swift */,
+				1D0B1F77227839550054B15B /* Fonts.swift */,
+				1D0B1F78227839550054B15B /* swiftgen.sh */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		1D1C3A6B22716B750031A9BC = {
 			isa = PBXGroup;
 			children = (
@@ -118,11 +179,13 @@
 		1D1C3A7622716B750031A9BC /* MyJogs */ = {
 			isa = PBXGroup;
 			children = (
+				1D0B1F74227839550054B15B /* Generated */,
+				1D0B1F71227837D40054B15B /* Engine */,
+				1D0B1F70227837C30054B15B /* Model */,
+				1D0B1F6F227837B90054B15B /* Views */,
+				1D0B1F6E2278370E0054B15B /* Controllers */,
+				1D0B1F6B227836AA0054B15B /* Ressources */,
 				1D1C3A7722716B750031A9BC /* AppDelegate.swift */,
-				1D1C3A7922716B750031A9BC /* FirstViewController.swift */,
-				1D1C3A7B22716B750031A9BC /* SecondViewController.swift */,
-				1D1C3A7D22716B750031A9BC /* Main.storyboard */,
-				1D1C3A8022716B760031A9BC /* Assets.xcassets */,
 				1D1C3A8222716B760031A9BC /* LaunchScreen.storyboard */,
 				1D1C3A8522716B760031A9BC /* Info.plist */,
 				1D0B1F632277F8890054B15B /* GoogleService-Info.plist */,
@@ -179,6 +242,7 @@
 			buildConfigurationList = 1D1C3A9E22716B760031A9BC /* Build configuration list for PBXNativeTarget "MyJogs" */;
 			buildPhases = (
 				CBEC7717E094F550E0CF45D3 /* [CP] Check Pods Manifest.lock */,
+				1D0B1F6A227835B80054B15B /* Swift Gen */,
 				1D1C3A7022716B750031A9BC /* Sources */,
 				1D1C3A7122716B750031A9BC /* Frameworks */,
 				1D1C3A7222716B750031A9BC /* Resources */,
@@ -281,6 +345,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D0B1F6D227836E00054B15B /* Localizable.strings in Resources */,
+				1D0B1F7C227839550054B15B /* swiftgen.sh in Resources */,
 				1D1C3A8422716B760031A9BC /* LaunchScreen.storyboard in Resources */,
 				1D0B1F642277F8890054B15B /* GoogleService-Info.plist in Resources */,
 				1D1C3A8122716B760031A9BC /* Assets.xcassets in Resources */,
@@ -323,6 +389,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
+		1D0B1F6A227835B80054B15B /* Swift Gen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Gen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/MyJogs/Generated/swiftgen.sh\n\n";
 		};
 		1D1C3AA722716FC60031A9BC /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -447,6 +531,9 @@
 			files = (
 				1D1C3A7C22716B750031A9BC /* SecondViewController.swift in Sources */,
 				1D1C3A7822716B750031A9BC /* AppDelegate.swift in Sources */,
+				1D0B1F79227839550054B15B /* Strings.swift in Sources */,
+				1D0B1F7A227839550054B15B /* Assets.swift in Sources */,
+				1D0B1F7B227839550054B15B /* Fonts.swift in Sources */,
 				1D1C3A7A22716B750031A9BC /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
