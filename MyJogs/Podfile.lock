@@ -50,7 +50,8 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.5.0):
     - GoogleUtilities/Logger
-  - lottie-ios (3.0.3)
+  - KeychainSwift (14.0.0)
+  - lottie-ios (3.0.4)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
@@ -64,7 +65,8 @@ DEPENDENCIES:
   - Crashlytics (~> 3.12.0)
   - Fabric (~> 1.9.0)
   - Firebase/Core
-  - lottie-ios (~> 3.0.3)
+  - KeychainSwift (~> 14.0)
+  - lottie-ios (~> 3.0.4)
   - SwiftGen (~> 5.2)
   - SwiftLint (~> 0.31.0)
 
@@ -80,6 +82,7 @@ SPEC REPOS:
     - FirebaseInstanceID
     - GoogleAppMeasurement
     - GoogleUtilities
+    - KeychainSwift
     - lottie-ios
     - nanopb
     - SwiftGen
@@ -96,11 +99,12 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
   GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
-  lottie-ios: 06e0b54aab85ba128e332687d7f4ac4861a7a7ae
+  KeychainSwift: d3cce449feb5198907aa3c50ae7409fdbd9d3e20
+  lottie-ios: 55a2de40418f8de2b155efaba4d4d1a025a5c570
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   SwiftGen: 4379bd3640b0a212a0f6ea3c494adba385513d10
   SwiftLint: 7a0227733d786395817373b2d0ca799fd0093ff3
 
-PODFILE CHECKSUM: e2d42fec89080f21c794cd0f243af68ec56f860f
+PODFILE CHECKSUM: b39f70bde3a27f02a35ef75676df5198f6f1efdf
 
 COCOAPODS: 1.5.3

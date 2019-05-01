@@ -1,5 +1,5 @@
-# Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# define a global platform for your project
+platform :ios, '11.4'
 
 target 'MyJogs' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -18,8 +18,11 @@ target 'MyJogs' do
   #asset management
   pod 'SwiftGen', '~> 5.2'
 
+  ## Keychain
+  pod 'KeychainSwift', '~> 14.0'
+  
   #UI
-  pod 'lottie-ios', '~> 3.0.3' ## Animation
+  pod 'lottie-ios', '~> 3.0.4' ## Animation
 
   #Swift norm rules fornatting
   pod 'SwiftLint', '~> 0.31.0'

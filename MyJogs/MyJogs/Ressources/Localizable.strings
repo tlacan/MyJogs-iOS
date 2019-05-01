@@ -7,3 +7,22 @@
 */
 
 "Main.App.Title" = "My Jogs";
+
+/*
+ *********************************
+ ** API ERROR
+ */
+
+"APIERROR.UNHANDLED_ERROR_CODE" = "Unknown error";
+"APIERROR.NONETWORK_ERROR" = "Lost network connection";
+"APIERROR.NETWORK_ERROR" = "Netnork error";
+"APIERROR.COMMON" = "An error happened. Retry in a moment";
+"APIERROR.UNEXPECTED_RESPONSE" = "Unexpected error";
+"APIERROR.UNEXPECTED_ERROR" = "Unexpected error";
+"APIERROR.NOT_CONNECTED" = "Not connected";
+"APIERROR.ACCESS_DENIED" = "Access denied";
+"APIERROR.UNKNWON_EMAIL" = "Unknown email";
+"APIERROR.UNKNWON_USER" = "Email unknown";
+"APIERROR.USER_EXISTS" = "User already exists";
+"APIERROR.LOGIN_ERROR" = "Name or Password unknown (reconnect)";
+"APIERROR.WRONG_CREDENTIALS" = "Wrong password";

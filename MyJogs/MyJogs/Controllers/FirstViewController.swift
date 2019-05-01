@@ -24,4 +24,3 @@ class FirstViewController: UIViewController {
         Crashlytics.sharedInstance().crash()
     }
 }
-
