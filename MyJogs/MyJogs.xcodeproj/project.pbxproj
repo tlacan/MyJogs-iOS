@@ -30,6 +30,10 @@
 		1D0B1FA02279B3BB0054B15B /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B1F9F2279B3BB0054B15B /* Data+Extensions.swift */; };
 		1D0B1FA22279B42B0054B15B /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B1FA12279B42B0054B15B /* URLRequest+Extension.swift */; };
 		1D0B1FA42279B5550054B15B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B1FA32279B5550054B15B /* String+Extensions.swift */; };
+		1D0B222E227BF3D80054B15B /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B222D227BF3D80054B15B /* Engine.swift */; };
+		1D0B2230227BF46C0054B15B /* ExpirableFileDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B222F227BF46C0054B15B /* ExpirableFileDataStore.swift */; };
+		1D0B2232227BF4AC0054B15B /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B2231227BF4AC0054B15B /* LocationService.swift */; };
+		1D0B2234227BF7130054B15B /* EndPointMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0B2233227BF7130054B15B /* EndPointMapper.swift */; };
 		1D1C3A7822716B750031A9BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7722716B750031A9BC /* AppDelegate.swift */; };
 		1D1C3A7A22716B750031A9BC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7922716B750031A9BC /* FirstViewController.swift */; };
 		1D1C3A7C22716B750031A9BC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7B22716B750031A9BC /* SecondViewController.swift */; };
@@ -86,6 +90,10 @@
 		1D0B1FA12279B42B0054B15B /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
 		1D0B1FA32279B5550054B15B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		1D0B1FA52279B68D0054B15B /* MyJogs-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyJogs-Bridging-Header.h"; sourceTree = "<group>"; };
+		1D0B222D227BF3D80054B15B /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
+		1D0B222F227BF46C0054B15B /* ExpirableFileDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpirableFileDataStore.swift; sourceTree = "<group>"; };
+		1D0B2231227BF4AC0054B15B /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		1D0B2233227BF7130054B15B /* EndPointMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointMapper.swift; sourceTree = "<group>"; };
 		1D1C3A7422716B750031A9BC /* MyJogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyJogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1C3A7722716B750031A9BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D1C3A7922716B750031A9BC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +204,7 @@
 		1D0B1F7D2279A7880054B15B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1D0B222D227BF3D80054B15B /* Engine.swift */,
 				1D0B1F7E2279A7B60054B15B /* EngineComponent.swift */,
 				1D0B1F802279A7DD0054B15B /* EngineContext.swift */,
 			);
@@ -217,6 +226,7 @@
 				1D0B1F842279A83B0054B15B /* ApiEndPoint.swift */,
 				1D0B1F862279A87D0054B15B /* NetworkClient.swift */,
 				1D0B1F882279A9150054B15B /* ApiError.swift */,
+				1D0B2233227BF7130054B15B /* EndPointMapper.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -226,6 +236,7 @@
 			children = (
 				1D0B1F8B2279AB7C0054B15B /* FileDataStore.swift */,
 				1D0B1F902279AC710054B15B /* RemoteImageDataStore.swift */,
+				1D0B222F227BF46C0054B15B /* ExpirableFileDataStore.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -249,6 +260,7 @@
 				1D0B1F932279ACC90054B15B /* ImageService.swift */,
 				1D0B1F952279AD020054B15B /* SessionService.swift */,
 				1D0B1F9D2279AEFE0054B15B /* WeakServiceOrderedSet.swift */,
+				1D0B2231227BF4AC0054B15B /* LocationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -635,6 +647,7 @@
 				1D0B1F892279A9150054B15B /* ApiError.swift in Sources */,
 				1D1C3A7C22716B750031A9BC /* SecondViewController.swift in Sources */,
 				1D0B1F9A2279ADAF0054B15B /* SessionModel.swift in Sources */,
+				1D0B2230227BF46C0054B15B /* ExpirableFileDataStore.swift in Sources */,
 				1D0B1F872279A87D0054B15B /* NetworkClient.swift in Sources */,
 				1D0B1F812279A7DD0054B15B /* EngineContext.swift in Sources */,
 				1D0B1F962279AD020054B15B /* SessionService.swift in Sources */,
@@ -645,13 +658,16 @@
 				1D0B1F7A227839550054B15B /* Assets.swift in Sources */,
 				1D0B1F9C2279AE2F0054B15B /* Date+Extensions.swift in Sources */,
 				1D0B1F852279A83B0054B15B /* ApiEndPoint.swift in Sources */,
+				1D0B222E227BF3D80054B15B /* Engine.swift in Sources */,
 				1D0B1F942279ACC90054B15B /* ImageService.swift in Sources */,
 				1D0B1F7B227839550054B15B /* Fonts.swift in Sources */,
 				1D0B1F982279AD970054B15B /* Formatter.swift in Sources */,
 				1D0B1FA02279B3BB0054B15B /* Data+Extensions.swift in Sources */,
 				1D0B1F912279AC710054B15B /* RemoteImageDataStore.swift in Sources */,
+				1D0B2234227BF7130054B15B /* EndPointMapper.swift in Sources */,
 				1D0B1F8F2279AC170054B15B /* Logger.swift in Sources */,
 				1D0B1FA42279B5550054B15B /* String+Extensions.swift in Sources */,
+				1D0B2232227BF4AC0054B15B /* LocationService.swift in Sources */,
 				1D0B1F8C2279AB7C0054B15B /* FileDataStore.swift in Sources */,
 				1D1C3A7A22716B750031A9BC /* FirstViewController.swift in Sources */,
 				1D0B1F7F2279A7B60054B15B /* EngineComponent.swift in Sources */,
