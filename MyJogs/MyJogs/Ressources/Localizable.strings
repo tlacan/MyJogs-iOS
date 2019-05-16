@@ -10,6 +10,16 @@
 
 /*
  *********************************
+ ** ONBOARDING
+ */
+
+"ONBOARDING.STEP.1.TITLE" = " My Jogs";
+"ONBOARDING.STEP.1.DESCRIPTION" = "Welcome to My Jogs the application /nwhich tracks your jogs.";
+"ONBOARDING.STEP.2.TITLE" = " My Jogs";
+"ONBOARDING.STEP.2.DESCRIPTION" = "We will ask you to create an account to save your data";
+
+/*
+ *********************************
  ** API ERROR
  */
 

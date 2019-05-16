@@ -44,6 +44,26 @@ internal enum L10n {
       internal static let title = L10n.tr("Localizable", "Main.App.Title")
     }
   }
+
+  internal enum Onboarding {
+
+    internal enum Step {
+
+      internal enum _1 {
+        /// Welcome to My Jogs the application /nwhich tracks your jogs.
+        internal static let description = L10n.tr("Localizable", "ONBOARDING.STEP.1.DESCRIPTION")
+        ///  My Jogs
+        internal static let title = L10n.tr("Localizable", "ONBOARDING.STEP.1.TITLE")
+      }
+
+      internal enum _2 {
+        /// We will ask you to create an account to save your data
+        internal static let description = L10n.tr("Localizable", "ONBOARDING.STEP.2.DESCRIPTION")
+        ///  My Jogs
+        internal static let title = L10n.tr("Localizable", "ONBOARDING.STEP.2.TITLE")
+      }
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 

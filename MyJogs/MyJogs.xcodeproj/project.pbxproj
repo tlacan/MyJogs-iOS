@@ -42,6 +42,10 @@
 		1D1C3A8422716B760031A9BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D1C3A8222716B760031A9BC /* LaunchScreen.storyboard */; };
 		1D1C3A8F22716B760031A9BC /* MyJogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A8E22716B760031A9BC /* MyJogsTests.swift */; };
 		1D1C3A9A22716B760031A9BC /* MyJogsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A9922716B760031A9BC /* MyJogsUITests.swift */; };
+		1D1D1733228D6E1F00749C71 /* OnBoardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D1D1732228D6E1F00749C71 /* OnBoardingCollectionViewCell.xib */; };
+		1D32036D228B067500EB8544 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D32036C228B067500EB8544 /* OnBoardingViewController.swift */; };
+		1D32036F228B076D00EB8544 /* OnBoardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D32036E228B076D00EB8544 /* OnBoardingViewController.xib */; };
+		1D320372228B0CE600EB8544 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D320371228B0CE500EB8544 /* OnBoardingCollectionViewCell.swift */; };
 		3DBA7474214DB37E2A02EE28 /* Pods_MyJogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77DD9540BE3E8B1E3D562C /* Pods_MyJogs.framework */; };
 		456CC8C16CBA217D16B7A805 /* Pods_MyJogsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C4DF8BCDC04D5423049E65 /* Pods_MyJogsUITests.framework */; };
 		A1CA5EB41B0FAD30CACA943D /* Pods_MyJogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA1A862972638463062B84B /* Pods_MyJogsTests.framework */; };
@@ -108,6 +112,10 @@
 		1D1C3A9522716B760031A9BC /* MyJogsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyJogsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1C3A9922716B760031A9BC /* MyJogsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJogsUITests.swift; sourceTree = "<group>"; };
 		1D1C3A9B22716B760031A9BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D1D1732228D6E1F00749C71 /* OnBoardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingCollectionViewCell.xib; sourceTree = "<group>"; };
+		1D32036C228B067500EB8544 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
+		1D32036E228B076D00EB8544 /* OnBoardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingViewController.xib; sourceTree = "<group>"; };
+		1D320371228B0CE500EB8544 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		4DA1A862972638463062B84B /* Pods_MyJogsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyJogsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9DA5C85827C01154D09ECA /* Pods-MyJogsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJogsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyJogsUITests/Pods-MyJogsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		644FD53219CFB59BD14C150B /* Pods-MyJogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJogs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyJogs/Pods-MyJogs.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +169,8 @@
 				1D1C3A7922716B750031A9BC /* FirstViewController.swift */,
 				1D1C3A7B22716B750031A9BC /* SecondViewController.swift */,
 				1D1C3A7D22716B750031A9BC /* Main.storyboard */,
+				1D32036C228B067500EB8544 /* OnBoardingViewController.swift */,
+				1D32036E228B076D00EB8544 /* OnBoardingViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -168,6 +178,7 @@
 		1D0B1F6F227837B90054B15B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1D320370228B0CCA00EB8544 /* CollectionViewCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,6 +335,15 @@
 			path = MyJogsUITests;
 			sourceTree = "<group>";
 		};
+		1D320370228B0CCA00EB8544 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1D320371228B0CE500EB8544 /* OnBoardingCollectionViewCell.swift */,
+				1D1D1732228D6E1F00749C71 /* OnBoardingCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		9FDDA3052F27242F68948D66 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,11 +478,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D32036F228B076D00EB8544 /* OnBoardingViewController.xib in Resources */,
 				1D0B1F6D227836E00054B15B /* Localizable.strings in Resources */,
 				1D0B1F7C227839550054B15B /* swiftgen.sh in Resources */,
 				1D1C3A8422716B760031A9BC /* LaunchScreen.storyboard in Resources */,
 				1D0B1F642277F8890054B15B /* GoogleService-Info.plist in Resources */,
 				1D1C3A8122716B760031A9BC /* Assets.xcassets in Resources */,
+				1D1D1733228D6E1F00749C71 /* OnBoardingCollectionViewCell.xib in Resources */,
 				1D1C3A7F22716B750031A9BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -644,6 +666,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D320372228B0CE600EB8544 /* OnBoardingCollectionViewCell.swift in Sources */,
 				1D0B1F892279A9150054B15B /* ApiError.swift in Sources */,
 				1D1C3A7C22716B750031A9BC /* SecondViewController.swift in Sources */,
 				1D0B1F9A2279ADAF0054B15B /* SessionModel.swift in Sources */,
@@ -667,6 +690,7 @@
 				1D0B2234227BF7130054B15B /* EndPointMapper.swift in Sources */,
 				1D0B1F8F2279AC170054B15B /* Logger.swift in Sources */,
 				1D0B1FA42279B5550054B15B /* String+Extensions.swift in Sources */,
+				1D32036D228B067500EB8544 /* OnBoardingViewController.swift in Sources */,
 				1D0B2232227BF4AC0054B15B /* LocationService.swift in Sources */,
 				1D0B1F8C2279AB7C0054B15B /* FileDataStore.swift in Sources */,
 				1D1C3A7A22716B750031A9BC /* FirstViewController.swift in Sources */,
