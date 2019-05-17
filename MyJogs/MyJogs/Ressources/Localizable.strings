@@ -14,9 +14,9 @@
  */
 
 "ONBOARDING.STEP.1.TITLE" = " My Jogs";
-"ONBOARDING.STEP.1.DESCRIPTION" = "Welcome to My Jogs the application /nwhich tracks your jogs.";
-"ONBOARDING.STEP.2.TITLE" = " My Jogs";
-"ONBOARDING.STEP.2.DESCRIPTION" = "We will ask you to create an account to save your data";
+"ONBOARDING.STEP.1.DESCRIPTION" = "Welcome to My Jogs/nthe application /nwhich tracks your jogs.";
+"ONBOARDING.STEP.2.DESCRIPTION" = "When you are ready to Run, Press Record";
+"ONBOARDING.STEP.3.DESCRIPTION" = "Track your runs put challenges and see your improvements.";
 
 /*
  *********************************

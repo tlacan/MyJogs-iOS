@@ -50,17 +50,20 @@ internal enum L10n {
     internal enum Step {
 
       internal enum _1 {
-        /// Welcome to My Jogs the application /nwhich tracks your jogs.
+        /// Welcome to My Jogs/nthe application /nwhich tracks your jogs.
         internal static let description = L10n.tr("Localizable", "ONBOARDING.STEP.1.DESCRIPTION")
         ///  My Jogs
         internal static let title = L10n.tr("Localizable", "ONBOARDING.STEP.1.TITLE")
       }
 
       internal enum _2 {
-        /// We will ask you to create an account to save your data
+        /// When you are ready to Run, Press Record
         internal static let description = L10n.tr("Localizable", "ONBOARDING.STEP.2.DESCRIPTION")
-        ///  My Jogs
-        internal static let title = L10n.tr("Localizable", "ONBOARDING.STEP.2.TITLE")
+      }
+
+      internal enum _3 {
+        /// Track your runs put challenges and see your improvements.
+        internal static let description = L10n.tr("Localizable", "ONBOARDING.STEP.3.DESCRIPTION")
       }
     }
   }

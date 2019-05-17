@@ -13,9 +13,10 @@ class OnBoardingViewController: UIViewController {
     @IBOutlet private weak var pageControl: UIPageControl!
     @IBOutlet private weak var collectionView: UICollectionView!
     
-    let backgrounds = [Asset.onboarding1.image, Asset.onboarding2.image]
-    let titles = [L10n.Onboarding.Step._1.title, L10n.Onboarding.Step._2.title]
-    let descriptions = [L10n.Onboarding.Step._1.description, L10n.Onboarding.Step._2.description]
+    let backgrounds = [nil, Asset.onboarding2.image, nil]
+    let titles = [L10n.Onboarding.Step._1.title, nil, nil]
+    let descriptions = [L10n.Onboarding.Step._1.description, L10n.Onboarding.Step._2.description, L10n.Onboarding.Step._3.description]
+    let smallImages = [Asset.iconLogoBis.image, nil, Asset.iconShoe.image]
     let engine: Engine
     
     init(engine: Engine) {
@@ -32,7 +33,7 @@ class OnBoardingViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 15, bottom: 10, right: 15)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width,
                                  height: UIScreen.main.bounds.height)
         layout.scrollDirection = .horizontal
@@ -58,7 +59,8 @@ extension OnBoardingViewController: UICollectionViewDelegate, UICollectionViewDa
         }
         cell.configure(title: titles[indexPath.row],
                        description: descriptions[indexPath.row],
-                       background: backgrounds[indexPath.row])
+                       background: backgrounds[indexPath.row],
+                       smallImage: smallImages[indexPath.row])
         return cell
     }
     

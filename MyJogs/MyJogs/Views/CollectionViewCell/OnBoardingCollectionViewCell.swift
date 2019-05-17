@@ -16,11 +16,19 @@ class OnBoardingCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var backgoundImage: UIImageView!
+    @IBOutlet private weak var smallImage: UIImageView!
     
-    func configure(title: String, description: String, background: UIImage) {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        smallImage.tintColor = .black
+        backgroundColor = .yellow
+    }
+    
+    func configure(title: String?, description: String, background: UIImage?, smallImage: UIImage?) {
         titleLabel.text = title
         subtitleLabel.text = description
         backgoundImage.image = background
+        self.smallImage.image = smallImage
     }
     
 }
