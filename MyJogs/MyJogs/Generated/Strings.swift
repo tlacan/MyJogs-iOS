@@ -47,10 +47,15 @@ internal enum L10n {
 
   internal enum Onboarding {
 
+    internal enum End {
+      /// Let's Go
+      internal static let button = L10n.tr("Localizable", "ONBOARDING.END.BUTTON")
+    }
+
     internal enum Step {
 
       internal enum _1 {
-        /// Welcome to My Jogs/nthe application /nwhich tracks your jogs.
+        /// Welcome to My Jogs\nthe application \nwhich tracks your jogs.
         internal static let description = L10n.tr("Localizable", "ONBOARDING.STEP.1.DESCRIPTION")
         ///  My Jogs
         internal static let title = L10n.tr("Localizable", "ONBOARDING.STEP.1.TITLE")

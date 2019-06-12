@@ -43,6 +43,7 @@
 		1D1C3A8F22716B760031A9BC /* MyJogsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A8E22716B760031A9BC /* MyJogsTests.swift */; };
 		1D1C3A9A22716B760031A9BC /* MyJogsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A9922716B760031A9BC /* MyJogsUITests.swift */; };
 		1D1D1733228D6E1F00749C71 /* OnBoardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D1D1732228D6E1F00749C71 /* OnBoardingCollectionViewCell.xib */; };
+		1D1D17352290F00B00749C71 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D17342290F00B00749C71 /* UIViewController+Extensions.swift */; };
 		1D32036D228B067500EB8544 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D32036C228B067500EB8544 /* OnBoardingViewController.swift */; };
 		1D32036F228B076D00EB8544 /* OnBoardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D32036E228B076D00EB8544 /* OnBoardingViewController.xib */; };
 		1D320372228B0CE600EB8544 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D320371228B0CE500EB8544 /* OnBoardingCollectionViewCell.swift */; };
@@ -113,6 +114,7 @@
 		1D1C3A9922716B760031A9BC /* MyJogsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJogsUITests.swift; sourceTree = "<group>"; };
 		1D1C3A9B22716B760031A9BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D1D1732228D6E1F00749C71 /* OnBoardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingCollectionViewCell.xib; sourceTree = "<group>"; };
+		1D1D17342290F00B00749C71 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		1D32036C228B067500EB8544 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		1D32036E228B076D00EB8544 /* OnBoardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingViewController.xib; sourceTree = "<group>"; };
 		1D320371228B0CE500EB8544 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				1D0B1F9F2279B3BB0054B15B /* Data+Extensions.swift */,
 				1D0B1FA12279B42B0054B15B /* URLRequest+Extension.swift */,
 				1D0B1FA32279B5550054B15B /* String+Extensions.swift */,
+				1D1D17342290F00B00749C71 /* UIViewController+Extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -688,6 +691,7 @@
 				1D0B1FA02279B3BB0054B15B /* Data+Extensions.swift in Sources */,
 				1D0B1F912279AC710054B15B /* RemoteImageDataStore.swift in Sources */,
 				1D0B2234227BF7130054B15B /* EndPointMapper.swift in Sources */,
+				1D1D17352290F00B00749C71 /* UIViewController+Extensions.swift in Sources */,
 				1D0B1F8F2279AC170054B15B /* Logger.swift in Sources */,
 				1D0B1FA42279B5550054B15B /* String+Extensions.swift in Sources */,
 				1D32036D228B067500EB8544 /* OnBoardingViewController.swift in Sources */,

@@ -12,11 +12,15 @@ import UIKit
 class OnBoardingViewController: UIViewController {
     @IBOutlet private weak var pageControl: UIPageControl!
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var endButton: UIButton!
     
-    let backgrounds = [nil, Asset.onboarding2.image, nil]
-    let titles = [L10n.Onboarding.Step._1.title, nil, nil]
-    let descriptions = [L10n.Onboarding.Step._1.description, L10n.Onboarding.Step._2.description, L10n.Onboarding.Step._3.description]
-    let smallImages = [Asset.iconLogoBis.image, nil, Asset.iconShoe.image]
+    let numberOfSteps = 3
+    var cellBeforeDragging: Int = 0
+    
+    let backgrounds: [UIImage?] = [nil, nil, nil]
+    let titles = [L10n.Onboarding.Step._1.title, L10n.Onboarding.Step._1.title, L10n.Onboarding.Step._1.title]
+    let descriptions = [L10n.Onboarding.Step._1.description, L10n.Onboarding.Step._3.description, L10n.Onboarding.Step._2.description]
+    let smallImages = [Asset.iconLogoBis.image, Asset.iconShoe.image, Asset.iconChrono.image]
     let engine: Engine
     
     init(engine: Engine) {
@@ -30,6 +34,15 @@ class OnBoardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureCollectionView()
+        endButton.setTitle(L10n.Onboarding.End.button, for: .normal)
+        endButton.layer.borderColor = UIColor.black.cgColor
+        endButton.layer.borderWidth = 2
+        endButton.layer.cornerRadius = 20
+        endButton.isHidden = true
+    }
+    
+    func configureCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
         let layout = UICollectionViewFlowLayout()
@@ -45,11 +58,14 @@ class OnBoardingViewController: UIViewController {
         ), forCellWithReuseIdentifier: OnBoardingCollectionViewCell.kReuseId)
     }
     
+    @IBAction func endButtonTouchUpInside(_ sender: Any) {
+        
+    }
 }
 
 extension OnBoardingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return numberOfSteps
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -64,5 +80,28 @@ extension OnBoardingViewController: UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentPage = Int(round(scrollView.contentOffset.x / UIScreen.main.bounds.width))
+        pageControl.currentPage = currentPage
+        pageControl.isHidden = currentPage == numberOfSteps - 1
+        endButton.isHidden = currentPage != numberOfSteps - 1
+    }
     
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        cellBeforeDragging = pageControl.currentPage
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        // Stop scrollView sliding:
+        targetContentOffset.pointee = scrollView.contentOffset
+        
+        var indexPath = IndexPath(item: pageControl.currentPage, section: 0)
+        if velocity.x < 0 {
+            indexPath = IndexPath(item: max(0, cellBeforeDragging - 1), section: 0)
+        } else if velocity.x > 0 {
+            indexPath = IndexPath(item: min(cellBeforeDragging + 1, collectionView.numberOfItems(inSection: 0) - 1), section: 0)
+            
+        }
+        collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
 }
