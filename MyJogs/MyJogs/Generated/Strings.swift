@@ -72,6 +72,18 @@ internal enum L10n {
       }
     }
   }
+
+  internal enum Tabbar {
+
+    internal enum Item {
+      /// Record
+      internal static let _1 = L10n.tr("Localizable", "TABBAR.ITEM.1")
+      /// History
+      internal static let _2 = L10n.tr("Localizable", "TABBAR.ITEM.2")
+      /// Settings
+      internal static let _3 = L10n.tr("Localizable", "TABBAR.ITEM.3")
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length nesting type_body_length type_name
 

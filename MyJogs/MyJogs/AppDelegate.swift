@@ -18,8 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-        window?.rootViewController = OnBoardingViewController(engine: engine)
+        let onboardingCompleted = UserDefaults.standard.value(forKey: OnBoardingViewController.kOnboardingCompleted) as? Bool
+        window?.rootViewController = onboardingCompleted == true ? TabbarController(engine: engine) : OnBoardingViewController(engine: engine)
         return true
+    }
+    
+    func displayMainController(fromController: UIViewController) {
+        window?.rootViewController = TabbarController(engine: engine)
+        fromController.dismiss(animated: false, completion: nil)
     }
     
     static func initEngine(appDelegate: SessionServiceObserver) -> Engine {

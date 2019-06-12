@@ -14,6 +14,8 @@ class OnBoardingViewController: UIViewController {
     @IBOutlet private weak var collectionView: UICollectionView!
     @IBOutlet private weak var endButton: UIButton!
     
+    static let kOnboardingCompleted = "onboardingCompleted"
+    
     let numberOfSteps = 3
     var cellBeforeDragging: Int = 0
     
@@ -38,13 +40,14 @@ class OnBoardingViewController: UIViewController {
         endButton.setTitle(L10n.Onboarding.End.button, for: .normal)
         endButton.layer.borderColor = UIColor.black.cgColor
         endButton.layer.borderWidth = 2
-        endButton.layer.cornerRadius = 20
+        endButton.layer.cornerRadius = 18
         endButton.isHidden = true
     }
     
     func configureCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.showsHorizontalScrollIndicator = false
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width,
@@ -59,7 +62,10 @@ class OnBoardingViewController: UIViewController {
     }
     
     @IBAction func endButtonTouchUpInside(_ sender: Any) {
-        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(true, forKey: OnBoardingViewController.kOnboardingCompleted)
+        appDelegate.displayMainController(fromController: self)
     }
 }
 

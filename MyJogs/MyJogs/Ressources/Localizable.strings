@@ -21,6 +21,15 @@
 
 /*
  *********************************
+ ** Tabbar
+ */
+
+"TABBAR.ITEM.1" = "Record";
+"TABBAR.ITEM.2" = "History";
+"TABBAR.ITEM.3" = "Settings";
+
+/*
+ *********************************
  ** API ERROR
  */
 
