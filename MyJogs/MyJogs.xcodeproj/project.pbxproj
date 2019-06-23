@@ -50,6 +50,12 @@
 		1D32036D228B067500EB8544 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D32036C228B067500EB8544 /* OnBoardingViewController.swift */; };
 		1D32036F228B076D00EB8544 /* OnBoardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D32036E228B076D00EB8544 /* OnBoardingViewController.xib */; };
 		1D320372228B0CE600EB8544 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D320371228B0CE500EB8544 /* OnBoardingCollectionViewCell.swift */; };
+		1D44216222BF511C0017C807 /* JogsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D44216122BF511C0017C807 /* JogsService.swift */; };
+		1D44216422BF521D0017C807 /* JogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D44216322BF521D0017C807 /* JogModel.swift */; };
+		1D4423EC22BF58D90017C807 /* Encoadable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4423EB22BF58D90017C807 /* Encoadable+Extension.swift */; };
+		1D4423EE22BF5D8B0017C807 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4423ED22BF5D8B0017C807 /* ServiceState.swift */; };
+		1D4423F222BFC07E0017C807 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4423F122BFC07E0017C807 /* UserService.swift */; };
+		1DEEF1E422BF2C0B001F1ACF /* RecordUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEEF1E322BF2C0B001F1ACF /* RecordUIView.swift */; };
 		3DBA7474214DB37E2A02EE28 /* Pods_MyJogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77DD9540BE3E8B1E3D562C /* Pods_MyJogs.framework */; };
 		456CC8C16CBA217D16B7A805 /* Pods_MyJogsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C4DF8BCDC04D5423049E65 /* Pods_MyJogsUITests.framework */; };
 		A1CA5EB41B0FAD30CACA943D /* Pods_MyJogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA1A862972638463062B84B /* Pods_MyJogsTests.framework */; };
@@ -124,6 +130,12 @@
 		1D32036C228B067500EB8544 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		1D32036E228B076D00EB8544 /* OnBoardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingViewController.xib; sourceTree = "<group>"; };
 		1D320371228B0CE500EB8544 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		1D44216122BF511C0017C807 /* JogsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogsService.swift; sourceTree = "<group>"; };
+		1D44216322BF521D0017C807 /* JogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogModel.swift; sourceTree = "<group>"; };
+		1D4423EB22BF58D90017C807 /* Encoadable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encoadable+Extension.swift"; sourceTree = "<group>"; };
+		1D4423ED22BF5D8B0017C807 /* ServiceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceState.swift; sourceTree = "<group>"; };
+		1D4423F122BFC07E0017C807 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		1DEEF1E322BF2C0B001F1ACF /* RecordUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordUIView.swift; sourceTree = "<group>"; };
 		4DA1A862972638463062B84B /* Pods_MyJogsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyJogsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9DA5C85827C01154D09ECA /* Pods-MyJogsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJogsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyJogsUITests/Pods-MyJogsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		644FD53219CFB59BD14C150B /* Pods-MyJogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJogs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyJogs/Pods-MyJogs.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +193,7 @@
 				1D32036E228B076D00EB8544 /* OnBoardingViewController.xib */,
 				1D130DE422B0B1C600A2453A /* TabbarController.swift */,
 				1D130DE622B0B23400A2453A /* RecordViewController.swift */,
+				1DEEF1E322BF2C0B001F1ACF /* RecordUIView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -197,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				1D0B1F992279ADAF0054B15B /* SessionModel.swift */,
+				1D44216322BF521D0017C807 /* JogModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +251,7 @@
 			children = (
 				1D0B1F8A2279AB650054B15B /* Storage */,
 				1D0B1F832279A8260054B15B /* Network */,
+				1D4423ED22BF5D8B0017C807 /* ServiceState.swift */,
 			);
 			path = Capabilities;
 			sourceTree = "<group>";
@@ -273,6 +288,7 @@
 				1D0B1FA32279B5550054B15B /* String+Extensions.swift */,
 				1D1D17342290F00B00749C71 /* UIViewController+Extensions.swift */,
 				1D130DE822B0B80C00A2453A /* UIImage+Extensions.swift */,
+				1D4423EB22BF58D90017C807 /* Encoadable+Extension.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -284,6 +300,8 @@
 				1D0B1F952279AD020054B15B /* SessionService.swift */,
 				1D0B1F9D2279AEFE0054B15B /* WeakServiceOrderedSet.swift */,
 				1D0B2231227BF4AC0054B15B /* LocationService.swift */,
+				1D44216122BF511C0017C807 /* JogsService.swift */,
+				1D4423F122BFC07E0017C807 /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -680,16 +698,19 @@
 			files = (
 				1D320372228B0CE600EB8544 /* OnBoardingCollectionViewCell.swift in Sources */,
 				1D0B1F892279A9150054B15B /* ApiError.swift in Sources */,
+				1D44216422BF521D0017C807 /* JogModel.swift in Sources */,
 				1D1C3A7C22716B750031A9BC /* SecondViewController.swift in Sources */,
 				1D0B1F9A2279ADAF0054B15B /* SessionModel.swift in Sources */,
 				1D0B2230227BF46C0054B15B /* ExpirableFileDataStore.swift in Sources */,
 				1D0B1F872279A87D0054B15B /* NetworkClient.swift in Sources */,
+				1D4423EC22BF58D90017C807 /* Encoadable+Extension.swift in Sources */,
 				1D0B1F812279A7DD0054B15B /* EngineContext.swift in Sources */,
 				1D0B1F962279AD020054B15B /* SessionService.swift in Sources */,
 				1D1C3A7822716B750031A9BC /* AppDelegate.swift in Sources */,
 				1D0B1F79227839550054B15B /* Strings.swift in Sources */,
 				1D130DE522B0B1C600A2453A /* TabbarController.swift in Sources */,
 				1D0B1F9E2279AEFE0054B15B /* WeakServiceOrderedSet.swift in Sources */,
+				1D44216222BF511C0017C807 /* JogsService.swift in Sources */,
 				1D0B1FA22279B42B0054B15B /* URLRequest+Extension.swift in Sources */,
 				1D0B1F7A227839550054B15B /* Assets.swift in Sources */,
 				1D0B1F9C2279AE2F0054B15B /* Date+Extensions.swift in Sources */,
@@ -697,14 +718,17 @@
 				1D0B1F852279A83B0054B15B /* ApiEndPoint.swift in Sources */,
 				1D0B222E227BF3D80054B15B /* Engine.swift in Sources */,
 				1D0B1F942279ACC90054B15B /* ImageService.swift in Sources */,
+				1DEEF1E422BF2C0B001F1ACF /* RecordUIView.swift in Sources */,
 				1D0B1F7B227839550054B15B /* Fonts.swift in Sources */,
 				1D130DE722B0B23400A2453A /* RecordViewController.swift in Sources */,
+				1D4423EE22BF5D8B0017C807 /* ServiceState.swift in Sources */,
 				1D0B1F982279AD970054B15B /* Formatter.swift in Sources */,
 				1D0B1FA02279B3BB0054B15B /* Data+Extensions.swift in Sources */,
 				1D0B1F912279AC710054B15B /* RemoteImageDataStore.swift in Sources */,
 				1D0B2234227BF7130054B15B /* EndPointMapper.swift in Sources */,
 				1D1D17352290F00B00749C71 /* UIViewController+Extensions.swift in Sources */,
 				1D0B1F8F2279AC170054B15B /* Logger.swift in Sources */,
+				1D4423F222BFC07E0017C807 /* UserService.swift in Sources */,
 				1D0B1FA42279B5550054B15B /* String+Extensions.swift in Sources */,
 				1D32036D228B067500EB8544 /* OnBoardingViewController.swift in Sources */,
 				1D0B2232227BF4AC0054B15B /* LocationService.swift in Sources */,
@@ -890,7 +914,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = CYG87LWPBT;
 				INFOPLIST_FILE = MyJogs/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -911,7 +935,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CYG87LWPBT;
 				INFOPLIST_FILE = MyJogs/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

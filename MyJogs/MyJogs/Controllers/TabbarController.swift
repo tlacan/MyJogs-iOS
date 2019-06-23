@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class TabbarController: UITabBarController {
     
@@ -24,10 +25,17 @@ class TabbarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let recordViewController = RecordViewController()
+        
+        let recordViewController = UINavigationController(rootViewController: RecordViewController(engine: engine))
         let tabBarImage = Asset.iconChrono.image.resizeWithWidth(width: 20)
         let recordTabBarItem = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage, tag: 0)
         recordViewController.tabBarItem = recordTabBarItem
-        setViewControllers([recordViewController], animated: true)
+        
+        let recordUIHosting = UINavigationController(rootViewController: UIHostingController(rootView: RecordUIView()))
+        let tabBarImage2 = Asset.iconShoe.image.resizeWithWidth(width: 20)
+        let recordUITabBarItem = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage2, tag: 1)
+        recordUIHosting.tabBarItem = recordUITabBarItem
+        
+        setViewControllers([recordViewController, recordUIHosting], animated: true)
     }
 }

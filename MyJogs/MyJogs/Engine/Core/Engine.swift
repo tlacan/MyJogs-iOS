@@ -44,6 +44,8 @@ struct EngineConfiguration {
     let sessionService: SessionService
     let imageService: ImageService
     let locationService: LocationService
+    let jogsService: JogsService
+    let userService: UserService
     let appUpdated: Bool
     
     // MARK: - Server image accesor
@@ -60,7 +62,9 @@ struct EngineConfiguration {
             sessionService,
             imageService,
             remoteImageAccessor,
-            locationService
+            locationService,
+            jogsService,
+            userService
         ]
     }
     
@@ -73,7 +77,9 @@ struct EngineConfiguration {
          mockedNetworkClient: NetworkClient? = nil,
          mockedSessionService: SessionService? = nil,
          mockedImageService: ImageService? = nil,
-         mockedLocationService: LocationService? = nil
+         mockedLocationService: LocationService? = nil,
+         mockedUserService: UserService? = nil,
+         mockedJogsService: JogsService? = nil
         ) {
         
         if !Engine.wasLaunchedOnce {
@@ -110,6 +116,9 @@ struct EngineConfiguration {
         self.httpClient = httpClient
         self.expirableFileDataStore = expirableFileDataStore
         self.imageService = imageService
+        self.userService = mockedUserService ?? UserService(networkClient: httpClient, sessionService: sessionService)
+        self.jogsService = mockedJogsService ?? JogsService(networkClient: httpClient, sessionService: sessionService,
+                                                            expirableDataStore: expirableFileDataStore)
         
         //Context
         context = initialContext

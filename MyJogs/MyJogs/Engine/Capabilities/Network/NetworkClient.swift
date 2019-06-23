@@ -68,11 +68,10 @@ class NetworkClient {
     /// onDone is called on the main thread
     @discardableResult
     public func call(endpoint: ApiEndpoint, dict: [String: Any?]?, parameterEncoding: ParameterEncoding = .JSON, headers: [String: String]? = nil, timeout: TimeInterval = 30, onDone: @escaping (AsyncCallResult<Data>) -> Void) -> URLSessionDataTask {
-        let urlString = "Jamnbon".removingPercentEncoding
-        let url = URL(string: urlString!)
-        
+        let string = "http://localhost:8080\(endpointMapperClass.path(for: endpoint))"
+        let url = URL(string: string)!
         let method = endpointMapperClass.method(for: endpoint)
-        return call(url: url!, verb: method, dict: dict, parameterEncoding: parameterEncoding, headers: headers, timeout: timeout, onDone: onDone)
+        return call(url: url, verb: method, dict: dict, parameterEncoding: parameterEncoding, headers: headers, timeout: timeout, onDone: onDone)
     }
 
     // swiftlint:disable:next function_parameter_count
@@ -197,6 +196,15 @@ class NetworkClient {
         } catch let error {
             throw ApiError.other(error: error)
         }
+    }
+    
+    static func data<T: Decodable>(from array: [[String: Any]]) throws -> [T]? {
+        let decoder = JSONDecoder()
+        let data = try JSONSerialization.data(
+            withJSONObject: array,
+            options: []
+        )
+        return try decoder.decode([T].self, from: data)
     }
     
     // MARK: - Observer

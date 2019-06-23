@@ -9,20 +9,22 @@
 import Foundation
 
 struct MyJogsEndpointMapper: EndpointMapper {
-    
     // swiftlint:disable cyclomatic_complexity function_body_length
     static func path(for endpoint: ApiEndpoint) -> String {
         switch endpoint {
-       
-        case .login:
-            return "/login"
+            case .login:
+                return "/login"
+            case .createJog, .jogs:
+                return "/jogs"
         }
     }
     
     static func method(for endpoint: ApiEndpoint) -> HTTPVerb {
         switch endpoint {
-        case .login:
+        case .login, .createJog:
             return .post
+        case .jogs:
+            return .get
         }
     }
 }
