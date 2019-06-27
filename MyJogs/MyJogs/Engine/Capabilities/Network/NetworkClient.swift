@@ -200,6 +200,7 @@ class NetworkClient {
     
     static func data<T: Decodable>(from array: [[String: Any]]) throws -> [T]? {
         let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(Formatter.iso8601)
         let data = try JSONSerialization.data(
             withJSONObject: array,
             options: []

@@ -31,11 +31,16 @@ class TabbarController: UITabBarController {
         let recordTabBarItem = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage, tag: 0)
         recordViewController.tabBarItem = recordTabBarItem
         
-        let recordUIHosting = UINavigationController(rootViewController: UIHostingController(rootView: RecordUIView()))
+        let recordUIHosting = UIHostingController(rootView: RecordUIView(engine: engine).environmentObject(engine.jogsService))
         let tabBarImage2 = Asset.iconShoe.image.resizeWithWidth(width: 20)
         let recordUITabBarItem = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage2, tag: 1)
         recordUIHosting.tabBarItem = recordUITabBarItem
         
-        setViewControllers([recordViewController, recordUIHosting], animated: true)
+        let loginUIHosting = UIHostingController(rootView: LoginUIView(engine: engine))
+        let tabBarImage3 = Asset.iconLogoBis.image.resizeWithWidth(width: 20)
+        let recordUITabBarItem2 = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage3, tag: 2)
+        loginUIHosting.tabBarItem = recordUITabBarItem2
+        
+        setViewControllers([recordViewController, recordUIHosting, loginUIHosting], animated: true)
     }
 }
