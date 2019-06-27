@@ -37,6 +37,31 @@ internal enum L10n {
     internal static let wrongCredentials = L10n.tr("Localizable", "APIERROR.WRONG_CREDENTIALS")
   }
 
+  internal enum Login {
+    /// My Jogs
+    internal static let title = L10n.tr("Localizable", "LOGIN.TITLE")
+
+    internal enum Baritem {
+      /// SignUp
+      internal static let signup = L10n.tr("Localizable", "LOGIN.BARITEM.SIGNUP")
+    }
+
+    internal enum Email {
+      /// Email
+      internal static let textfield = L10n.tr("Localizable", "LOGIN.EMAIL.TEXTFIELD")
+    }
+
+    internal enum Login {
+      /// Login
+      internal static let button = L10n.tr("Localizable", "LOGIN.LOGIN.BUTTON")
+    }
+
+    internal enum Password {
+      /// Password
+      internal static let textfield = L10n.tr("Localizable", "LOGIN.PASSWORD.TEXTFIELD")
+    }
+  }
+
   internal enum Main {
 
     internal enum App {

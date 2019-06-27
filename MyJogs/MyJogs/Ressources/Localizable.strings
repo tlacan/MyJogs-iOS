@@ -28,6 +28,19 @@
 "TABBAR.ITEM.2" = "History";
 "TABBAR.ITEM.3" = "Settings";
 
+
+/*
+ *********************************
+ ** LOGIN
+ */
+
+"LOGIN.TITLE" = "My Jogs";
+"LOGIN.BARITEM.SIGNUP" = "SignUp";
+"LOGIN.EMAIL.TEXTFIELD" = "Email";
+"LOGIN.PASSWORD.TEXTFIELD" = "Password";
+"LOGIN.LOGIN.BUTTON" = "Login";
+
+
 /*
  *********************************
  ** API ERROR

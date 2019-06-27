@@ -7,12 +7,14 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 
 public protocol JogsServiceObserver {
     func onJogService(jogService: JogsService, didUpdate state: ServiceState)
 }
 
-public class JogsService {
+public class JogsService: BindableObject {
     var jogs: [JogModel] = []
     let networkClient: NetworkClient
     let sessionService: SessionService
@@ -30,6 +32,15 @@ public class JogsService {
         self.networkClient = networkClient
         self.sessionService = sessionService
     }
+    
+    func register(observer: JogsServiceObserver) {
+        observers.add(value: observer)
+    }
+    
+    func unregister(observer: JogsServiceObserver) {
+        observers.remove(value: observer)
+    }
+    public var didChange = PassthroughSubject<JogsService, Never>()
     
     func createRandomModel() -> JogModel {
         let beginDate = Date()
@@ -49,6 +60,8 @@ public class JogsService {
                             case .success:
                                 self?.jogs.append(jog)
                                 onDone(nil)
+                                guard let strongSelf = self else { return }
+                                self?.didChange.send(strongSelf)
                             case .error:
                                 onDone(.networkError)
                             }
@@ -70,6 +83,8 @@ public class JogsService {
                     do {
                         self?.jogs = try (NetworkClient.data(from: jsonDict) ?? [])
                         self?.state = .loaded
+                        guard let strongSelf = self else { return }
+                        self?.didChange.send(strongSelf)
                     } catch let error {
                         LOG("[REFRESH JOGS] decoding error \(error.localizedDescription)")
                         self?.state = .error(.unexpectedApiResponse)

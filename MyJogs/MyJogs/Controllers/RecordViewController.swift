@@ -23,6 +23,7 @@ class RecordViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        engine.jogsService.register(observer: self)
         title = "View Controller Records"
         let rightItem = UIBarButtonItem(title: "Créer",
                                         style: .done,
