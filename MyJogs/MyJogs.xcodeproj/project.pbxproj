@@ -37,6 +37,10 @@
 		1D130DE522B0B1C600A2453A /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D130DE422B0B1C600A2453A /* TabbarController.swift */; };
 		1D130DE722B0B23400A2453A /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D130DE622B0B23400A2453A /* RecordViewController.swift */; };
 		1D130DE922B0B80C00A2453A /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D130DE822B0B80C00A2453A /* UIImage+Extensions.swift */; };
+		1D1963F922C4B24E00CC0DF6 /* LoginUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1963F822C4B24E00CC0DF6 /* LoginUIView.swift */; };
+		1D1963FE22C4B8A300CC0DF6 /* run.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D1963FD22C4B8A300CC0DF6 /* run.json */; };
+		1D19640022C5B95A00CC0DF6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1963FF22C5B95A00CC0DF6 /* Constants.swift */; };
+		1D19640322C5E22400CC0DF6 /* LottieUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19640222C5E22400CC0DF6 /* LottieUIView.swift */; };
 		1D1C3A7822716B750031A9BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7722716B750031A9BC /* AppDelegate.swift */; };
 		1D1C3A7A22716B750031A9BC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7922716B750031A9BC /* FirstViewController.swift */; };
 		1D1C3A7C22716B750031A9BC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7B22716B750031A9BC /* SecondViewController.swift */; };
@@ -111,6 +115,10 @@
 		1D130DE422B0B1C600A2453A /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		1D130DE622B0B23400A2453A /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		1D130DE822B0B80C00A2453A /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		1D1963F822C4B24E00CC0DF6 /* LoginUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUIView.swift; sourceTree = "<group>"; };
+		1D1963FD22C4B8A300CC0DF6 /* run.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = run.json; sourceTree = "<group>"; };
+		1D1963FF22C5B95A00CC0DF6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		1D19640222C5E22400CC0DF6 /* LottieUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieUIView.swift; sourceTree = "<group>"; };
 		1D1C3A7422716B750031A9BC /* MyJogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyJogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1C3A7722716B750031A9BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D1C3A7922716B750031A9BC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +185,7 @@
 		1D0B1F6B227836AA0054B15B /* Ressources */ = {
 			isa = PBXGroup;
 			children = (
+				1D1963FA22C4B2BA00CC0DF6 /* Lottie */,
 				1D1C3A8022716B760031A9BC /* Assets.xcassets */,
 				1D0B1F6C227836E00054B15B /* Localizable.strings */,
 			);
@@ -186,6 +195,7 @@
 		1D0B1F6E2278370E0054B15B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1D19640122C5E20D00CC0DF6 /* UIViews */,
 				1D1C3A7922716B750031A9BC /* FirstViewController.swift */,
 				1D1C3A7B22716B750031A9BC /* SecondViewController.swift */,
 				1D1C3A7D22716B750031A9BC /* Main.storyboard */,
@@ -193,7 +203,6 @@
 				1D32036E228B076D00EB8544 /* OnBoardingViewController.xib */,
 				1D130DE422B0B1C600A2453A /* TabbarController.swift */,
 				1D130DE622B0B23400A2453A /* RecordViewController.swift */,
-				1DEEF1E322BF2C0B001F1ACF /* RecordUIView.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -289,6 +298,7 @@
 				1D1D17342290F00B00749C71 /* UIViewController+Extensions.swift */,
 				1D130DE822B0B80C00A2453A /* UIImage+Extensions.swift */,
 				1D4423EB22BF58D90017C807 /* Encoadable+Extension.swift */,
+				1D1963FF22C5B95A00CC0DF6 /* Constants.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -304,6 +314,32 @@
 				1D4423F122BFC07E0017C807 /* UserService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		1D1963FA22C4B2BA00CC0DF6 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				1D1963FD22C4B8A300CC0DF6 /* run.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		1D19640122C5E20D00CC0DF6 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				1D19640422C5E3A400CC0DF6 /* Components */,
+				1DEEF1E322BF2C0B001F1ACF /* RecordUIView.swift */,
+				1D1963F822C4B24E00CC0DF6 /* LoginUIView.swift */,
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
+		1D19640422C5E3A400CC0DF6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1D19640222C5E22400CC0DF6 /* LottieUIView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		1D1C3A6B22716B750031A9BC = {
@@ -515,6 +551,7 @@
 				1D0B1F642277F8890054B15B /* GoogleService-Info.plist in Resources */,
 				1D1C3A8122716B760031A9BC /* Assets.xcassets in Resources */,
 				1D1D1733228D6E1F00749C71 /* OnBoardingCollectionViewCell.xib in Resources */,
+				1D1963FE22C4B8A300CC0DF6 /* run.json in Resources */,
 				1D1C3A7F22716B750031A9BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,6 +748,7 @@
 				1D130DE522B0B1C600A2453A /* TabbarController.swift in Sources */,
 				1D0B1F9E2279AEFE0054B15B /* WeakServiceOrderedSet.swift in Sources */,
 				1D44216222BF511C0017C807 /* JogsService.swift in Sources */,
+				1D19640322C5E22400CC0DF6 /* LottieUIView.swift in Sources */,
 				1D0B1FA22279B42B0054B15B /* URLRequest+Extension.swift in Sources */,
 				1D0B1F7A227839550054B15B /* Assets.swift in Sources */,
 				1D0B1F9C2279AE2F0054B15B /* Date+Extensions.swift in Sources */,
@@ -720,12 +758,14 @@
 				1D0B1F942279ACC90054B15B /* ImageService.swift in Sources */,
 				1DEEF1E422BF2C0B001F1ACF /* RecordUIView.swift in Sources */,
 				1D0B1F7B227839550054B15B /* Fonts.swift in Sources */,
+				1D19640022C5B95A00CC0DF6 /* Constants.swift in Sources */,
 				1D130DE722B0B23400A2453A /* RecordViewController.swift in Sources */,
 				1D4423EE22BF5D8B0017C807 /* ServiceState.swift in Sources */,
 				1D0B1F982279AD970054B15B /* Formatter.swift in Sources */,
 				1D0B1FA02279B3BB0054B15B /* Data+Extensions.swift in Sources */,
 				1D0B1F912279AC710054B15B /* RemoteImageDataStore.swift in Sources */,
 				1D0B2234227BF7130054B15B /* EndPointMapper.swift in Sources */,
+				1D1963F922C4B24E00CC0DF6 /* LoginUIView.swift in Sources */,
 				1D1D17352290F00B00749C71 /* UIViewController+Extensions.swift in Sources */,
 				1D0B1F8F2279AC170054B15B /* Logger.swift in Sources */,
 				1D4423F222BFC07E0017C807 /* UserService.swift in Sources */,

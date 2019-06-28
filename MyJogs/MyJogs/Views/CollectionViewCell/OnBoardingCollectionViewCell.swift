@@ -22,7 +22,7 @@ class OnBoardingCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         smallImage.tintColor = .black
         backgroundColor = .yellow
-        titleLabel.font = UIFont(name: "Futura-CondensedExtraBold", size: 40)
+        titleLabel.font = UIFont(name: K.Fonts.appTitleFont, size: 40)
     }
     
     func configure(title: String?, description: String, background: UIImage?, smallImage: UIImage?) {

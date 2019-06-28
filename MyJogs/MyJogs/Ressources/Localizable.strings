@@ -10,6 +10,12 @@
 
 /*
  *********************************
+ ** COMMON
+ */
+"COMMON.TEXTFIELD.REQUIRED" = "Required";
+
+/*
+ *********************************
  ** ONBOARDING
  */
 
@@ -35,7 +41,7 @@
  */
 
 "LOGIN.TITLE" = "My Jogs";
-"LOGIN.BARITEM.SIGNUP" = "SignUp";
+"LOGIN.BARITEM.SIGNUP" = "Sign Up";
 "LOGIN.EMAIL.TEXTFIELD" = "Email";
 "LOGIN.PASSWORD.TEXTFIELD" = "Password";
 "LOGIN.LOGIN.BUTTON" = "Login";
