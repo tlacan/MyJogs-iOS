@@ -41,6 +41,8 @@
 		1D1963FE22C4B8A300CC0DF6 /* run.json in Resources */ = {isa = PBXBuildFile; fileRef = 1D1963FD22C4B8A300CC0DF6 /* run.json */; };
 		1D19640022C5B95A00CC0DF6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1963FF22C5B95A00CC0DF6 /* Constants.swift */; };
 		1D19640322C5E22400CC0DF6 /* LottieUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19640222C5E22400CC0DF6 /* LottieUIView.swift */; };
+		1D19640622C6120A00CC0DF6 /* SignUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19640522C6120A00CC0DF6 /* SignUIView.swift */; };
+		1D19640822C895C500CC0DF6 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D19640722C895C500CC0DF6 /* UserModel.swift */; };
 		1D1C3A7822716B750031A9BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7722716B750031A9BC /* AppDelegate.swift */; };
 		1D1C3A7A22716B750031A9BC /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7922716B750031A9BC /* FirstViewController.swift */; };
 		1D1C3A7C22716B750031A9BC /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A7B22716B750031A9BC /* SecondViewController.swift */; };
@@ -119,6 +121,8 @@
 		1D1963FD22C4B8A300CC0DF6 /* run.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = run.json; sourceTree = "<group>"; };
 		1D1963FF22C5B95A00CC0DF6 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		1D19640222C5E22400CC0DF6 /* LottieUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieUIView.swift; sourceTree = "<group>"; };
+		1D19640522C6120A00CC0DF6 /* SignUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUIView.swift; sourceTree = "<group>"; };
+		1D19640722C895C500CC0DF6 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1D1C3A7422716B750031A9BC /* MyJogs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyJogs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D1C3A7722716B750031A9BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D1C3A7922716B750031A9BC /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 			children = (
 				1D0B1F992279ADAF0054B15B /* SessionModel.swift */,
 				1D44216322BF521D0017C807 /* JogModel.swift */,
+				1D19640722C895C500CC0DF6 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				1D19640422C5E3A400CC0DF6 /* Components */,
 				1DEEF1E322BF2C0B001F1ACF /* RecordUIView.swift */,
 				1D1963F822C4B24E00CC0DF6 /* LoginUIView.swift */,
+				1D19640522C6120A00CC0DF6 /* SignUIView.swift */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -743,6 +749,7 @@
 				1D4423EC22BF58D90017C807 /* Encoadable+Extension.swift in Sources */,
 				1D0B1F812279A7DD0054B15B /* EngineContext.swift in Sources */,
 				1D0B1F962279AD020054B15B /* SessionService.swift in Sources */,
+				1D19640822C895C500CC0DF6 /* UserModel.swift in Sources */,
 				1D1C3A7822716B750031A9BC /* AppDelegate.swift in Sources */,
 				1D0B1F79227839550054B15B /* Strings.swift in Sources */,
 				1D130DE522B0B1C600A2453A /* TabbarController.swift in Sources */,
@@ -763,6 +770,7 @@
 				1D4423EE22BF5D8B0017C807 /* ServiceState.swift in Sources */,
 				1D0B1F982279AD970054B15B /* Formatter.swift in Sources */,
 				1D0B1FA02279B3BB0054B15B /* Data+Extensions.swift in Sources */,
+				1D19640622C6120A00CC0DF6 /* SignUIView.swift in Sources */,
 				1D0B1F912279AC710054B15B /* RemoteImageDataStore.swift in Sources */,
 				1D0B2234227BF7130054B15B /* EndPointMapper.swift in Sources */,
 				1D1963F922C4B24E00CC0DF6 /* LoginUIView.swift in Sources */,

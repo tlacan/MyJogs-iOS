@@ -38,6 +38,8 @@ internal enum L10n {
   }
 
   internal enum Common {
+    /// OK
+    internal static let ok = L10n.tr("Localizable", "COMMON.OK")
 
     internal enum Textfield {
       /// Required
@@ -103,6 +105,42 @@ internal enum L10n {
         /// Track your runs put challenges and see your improvements.
         internal static let description = L10n.tr("Localizable", "ONBOARDING.STEP.3.DESCRIPTION")
       }
+    }
+  }
+
+  internal enum Signup {
+    /// My Jogs
+    internal static let title = L10n.tr("Localizable", "SIGNUP.TITLE")
+
+    internal enum Baritem {
+      /// Login
+      internal static let login = L10n.tr("Localizable", "SIGNUP.BARITEM.LOGIN")
+    }
+
+    internal enum Email {
+      /// Email address not valid
+      internal static let notvalid = L10n.tr("Localizable", "SIGNUP.EMAIL.NOTVALID")
+      /// Email
+      internal static let textfield = L10n.tr("Localizable", "SIGNUP.EMAIL.TEXTFIELD")
+    }
+
+    internal enum Password {
+      /// Passwords different
+      internal static let different = L10n.tr("Localizable", "SIGNUP.PASSWORD.DIFFERENT")
+      /// Password must be at least 8 characters
+      internal static let notvalid = L10n.tr("Localizable", "SIGNUP.PASSWORD.NOTVALID")
+      /// Password
+      internal static let textfield = L10n.tr("Localizable", "SIGNUP.PASSWORD.TEXTFIELD")
+    }
+
+    internal enum PasswordConfirm {
+      /// Password confirm
+      internal static let textfield = L10n.tr("Localizable", "SIGNUP.PASSWORD_CONFIRM.TEXTFIELD")
+    }
+
+    internal enum Signup {
+      /// Sign up
+      internal static let button = L10n.tr("Localizable", "SIGNUP.SIGNUP.BUTTON")
     }
   }
 

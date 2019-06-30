@@ -15,7 +15,8 @@ public protocol JogsServiceObserver {
 }
 
 public class JogsService: BindableObject {
-    var jogs: [JogModel] = []
+    static let kFileStore = "jogs"
+    
     let networkClient: NetworkClient
     let sessionService: SessionService
     let expirableDataStore: ExpirableFileDataStore
@@ -25,12 +26,25 @@ public class JogsService: BindableObject {
             observers.invoke { $0.onJogService(jogService: self, didUpdate: state) }
         }
     }
+    var jogs: [JogModel] = [] {
+        didSet {
+            expirableDataStore.persist(
+                codable: jogs, filename: JogsService.kFileStore, in: expirableDataStore.dataStore.rootDirectory()
+            )
+        }
+    }
     fileprivate(set) var observers = WeakObserverOrderedSet<JogsServiceObserver>()
     
     init(networkClient: NetworkClient, sessionService: SessionService, expirableDataStore: ExpirableFileDataStore) {
         self.expirableDataStore = expirableDataStore
         self.networkClient = networkClient
         self.sessionService = sessionService
+        if let cachedJogs: [JogModel] = expirableDataStore.codable(
+            from: JogsService.kFileStore,
+            in: expirableDataStore.dataStore.rootDirectory()
+            ) {
+            jogs = cachedJogs
+        }
     }
     
     func register(observer: JogsServiceObserver) {

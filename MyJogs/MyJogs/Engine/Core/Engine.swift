@@ -116,7 +116,7 @@ struct EngineConfiguration {
         self.httpClient = httpClient
         self.expirableFileDataStore = expirableFileDataStore
         self.imageService = imageService
-        self.userService = mockedUserService ?? UserService(networkClient: httpClient, sessionService: sessionService)
+        self.userService = mockedUserService ?? UserService(networkClient: httpClient, sessionService: sessionService, expirableDataStore: expirableFileDataStore)
         self.jogsService = mockedJogsService ?? JogsService(networkClient: httpClient, sessionService: sessionService,
                                                             expirableDataStore: expirableFileDataStore)
         

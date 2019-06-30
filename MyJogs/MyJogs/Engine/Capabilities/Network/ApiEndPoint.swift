@@ -17,6 +17,7 @@ enum ApiEndpoint {
     
     // user
     case login
+    case signUp
     case createJog
     case jogs
 }

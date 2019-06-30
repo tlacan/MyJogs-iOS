@@ -13,6 +13,7 @@
  ** COMMON
  */
 "COMMON.TEXTFIELD.REQUIRED" = "Required";
+"COMMON.OK" = "OK";
 
 /*
  *********************************
@@ -45,6 +46,21 @@
 "LOGIN.EMAIL.TEXTFIELD" = "Email";
 "LOGIN.PASSWORD.TEXTFIELD" = "Password";
 "LOGIN.LOGIN.BUTTON" = "Login";
+
+/*
+ *********************************
+ ** SIGNUP
+ */
+
+"SIGNUP.TITLE" = "My Jogs";
+"SIGNUP.BARITEM.LOGIN" = "Login";
+"SIGNUP.EMAIL.TEXTFIELD" = "Email";
+"SIGNUP.EMAIL.NOTVALID" = "Email address not valid";
+"SIGNUP.PASSWORD.TEXTFIELD" = "Password";
+"SIGNUP.PASSWORD_CONFIRM.TEXTFIELD" = "Password confirm";
+"SIGNUP.PASSWORD.NOTVALID" = "Password must be at least 8 characters";
+"SIGNUP.PASSWORD.DIFFERENT" = "Passwords different";
+"SIGNUP.SIGNUP.BUTTON" = "Sign up";
 
 
 /*
