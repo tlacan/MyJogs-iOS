@@ -39,9 +39,14 @@ class UserService: BindableObject {
     
     func signUp(email: String, password: String, onDone:@escaping (ApiError?) -> Void) {
         let parameter = ["email": email, "password": password]
+        
         networkCLient.call(endpoint: ApiEndpoint.signUp, dict: parameter) { (asyncResult) in
             switch asyncResult {
-            case .success:
+            case .success(_, let code):
+                if code != 200 {
+                    onDone(ApiError.apiErrorFor(code: String(code), reason: nil))
+                    return
+                }
                 onDone(nil)
             case .error:
                 onDone(.noNetwork)
@@ -53,19 +58,28 @@ class UserService: BindableObject {
         let parameter = ["email": email, "password": password]
         networkCLient.call(endpoint: ApiEndpoint.login, dict: parameter) { [weak self](asyncResult) in
             switch asyncResult {
-                case .success(let data, _):
-                    if let json = ((try? data?.mapJSON()) as Any??),
+                case .success(let data, let code):
+                    if code == 500 {
+                        onDone(.wrongCredentials(nil))
+                        return
+                    }
+                    let jsonDecoder = JSONDecoder()
+                    jsonDecoder.dateDecodingStrategy = .formatted(.iso8601)
+                    if let data = data,
+                       let json = ((try? data.mapJSON()) as Any??),
                        let jsonDict = json as? [String: Any],
+                       let user = try? jsonDecoder.decode(UserModel.self, from: data),
                        let token = jsonDict["token"] as? String {
+                        self?.user = user
                         self?.sessionService.currentSession = SessionModel(accessToken: token,
                                                                            refreshToken: "",
                                                                            tokenType: .bearer,
                                                                            expiresAt: Date(),
                                                                            expiresIn: 50000)
                         onDone(nil)
-                    } else {
-                        onDone(.apiErrorFor(code: "200", reason: "Mot de passe incorrect"))
-                }
+                        return
+                    }
+                    onDone(.unexpectedApiResponse)
                 case .error:
                     onDone(.noNetwork)
             }

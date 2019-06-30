@@ -12,6 +12,8 @@ public enum ApiError: Error, Equatable {
     static let kUnexpectedReason = L10n.Apierror.unexpectedError
     static let kUnhandledErrorCode = L10n.Apierror.unhandledErrorCode
     
+    static let kCodeUserExists = "409"
+    
     case noNetwork
     case networkError
     case unexpectedApiResponse
@@ -34,6 +36,7 @@ public enum ApiError: Error, Equatable {
         }
         
         switch code {
+        case ApiError.kCodeUserExists: return userExists(L10n.Apierror.userExists)
         default:
             let description: String = reason ?? L10n.Apierror.common
             let error = NSError(

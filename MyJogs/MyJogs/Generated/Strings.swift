@@ -33,7 +33,7 @@ internal enum L10n {
     internal static let unknwonUser = L10n.tr("Localizable", "APIERROR.UNKNWON_USER")
     /// User already exists
     internal static let userExists = L10n.tr("Localizable", "APIERROR.USER_EXISTS")
-    /// Wrong password
+    /// Email or password incorrect
     internal static let wrongCredentials = L10n.tr("Localizable", "APIERROR.WRONG_CREDENTIALS")
   }
 

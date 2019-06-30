@@ -80,4 +80,4 @@
 "APIERROR.UNKNWON_USER" = "Email unknown";
 "APIERROR.USER_EXISTS" = "User already exists";
 "APIERROR.LOGIN_ERROR" = "Name or Password unknown (reconnect)";
-"APIERROR.WRONG_CREDENTIALS" = "Wrong password";
+"APIERROR.WRONG_CREDENTIALS" = "Email or password incorrect";

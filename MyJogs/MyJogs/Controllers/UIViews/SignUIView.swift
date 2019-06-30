@@ -17,6 +17,8 @@ struct SignUIView: View {
     @State private var confirmPassword: String = ""
     @State var showingAlert: Bool = false
     @State var showingAlertMessage: String = ""
+    @State var displayNotValidEmail = false
+    @State var displayPasswordErrors = false
     
     var body: some View {
         ScrollView {
@@ -25,38 +27,35 @@ struct SignUIView: View {
                 LottieUI(name: K.Lottie.run).background(SwiftUI.Color.yellow)
                 HStack {
                     Text(L10n.Signup.Email.textfield).layoutPriority(999).frame(width: 100, alignment: .leading)
-                    TextField($email, placeholder: Text(L10n.Common.Textfield.required))
-                        .background(Color.clear, cornerRadius: 5.0)
+                    TextField($email, placeholder: Text(L10n.Common.Textfield.required), onEditingChanged: { (editing) in
+                        if !editing {
+                            self.displayNotValidEmail = !self.email.isValidEmail()
+                        }
+                    }).background(Color.clear, cornerRadius: 5.0)
                         .layoutPriority(1)
+                    
                 }.frame(minWidth: UIScreen.main.bounds.width - 40, maxWidth: UIScreen.main.bounds.width - 40)
-                if email.count > 0 && !email.isValidEmail() {
+                if displayNotValidEmail {
                     Text(L10n.Signup.Email.notvalid).foregroundColor(SwiftUI.Color.red)
                 }
                 
                 Divider().foregroundColor(.black).padding(.bottom, 3)
-                
                 HStack {
                     Text(L10n.Signup.Password.textfield).layoutPriority(999).frame(width: 100, alignment: .leading)
-                    SecureField($password, placeholder: Text(L10n.Common.Textfield.required))
-                        .background(Color.clear, cornerRadius: 5.0)
-                        .layoutPriority(1)
+                    
+                    SecureField($password, placeholder: Text(L10n.Common.Textfield.required)).background(Color.clear, cornerRadius: 5.0)
+                      .layoutPriority(1)
                 }.frame(minWidth: UIScreen.main.bounds.width - 40, maxWidth: UIScreen.main.bounds.width - 40)
                 
                 Divider().foregroundColor(.black).padding(.bottom, 3)
                 HStack {
-                    Text(L10n.Signup.PasswordConfirm.textfield).layoutPriority(999).frame(width: 200, alignment: .leading)
-                    SecureField($password, placeholder: Text(L10n.Common.Textfield.required))
+                    Text(L10n.Signup.PasswordConfirm.textfield).layoutPriority(999).frame(width: 160, alignment: .leading)
+                    SecureField($confirmPassword, placeholder: Text(L10n.Common.Textfield.required))
                         .background(Color.clear, cornerRadius: 5.0)
                         .layoutPriority(1)
                 }.frame(minWidth: UIScreen.main.bounds.width - 40, maxWidth: UIScreen.main.bounds.width - 40)
- 
-                if password.count > 0 && password.count < 9 {
-                    Text(L10n.Signup.Password.notvalid).foregroundColor(SwiftUI.Color.red)
-                }
-    
-                //if password.count > 0 { //&& password != confirmPassword {
-                    //Text(L10n.Signup.Password.different).foregroundColor(SwiftUI.Color.red)
-                //}
+                
+                PasswordErrorView(password: password, confirmPassword: confirmPassword)
                 
                 HStack {
                     Spacer()
@@ -80,6 +79,8 @@ struct SignUIView: View {
             if let error = error {
                 self.showingAlertMessage = error.localizedDescription
                 self.showingAlert = true
+            } else {
+                self.dismissView()
             }
         })
     }
@@ -88,11 +89,32 @@ struct SignUIView: View {
     }
     
     func updateButtonState() -> Bool {
-        return true //email.isValidEmail() && !password.isEmpty && password == confirmPassword
+        return email.isValidEmail() && !password.isEmpty && password == confirmPassword
     }
     
     func displayEmailErrorMessage() -> Bool {
         return true
+    }
+}
+
+struct PasswordErrorView: View {
+    let password: String
+    let confirmPassword: String
+    
+    init(password: String, confirmPassword: String) {
+        self.password = password
+        self.confirmPassword = confirmPassword
+    }
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            if password.count > 0 && password.count < 9 {
+                Text(L10n.Signup.Password.notvalid).foregroundColor(SwiftUI.Color.red)
+            }
+            if password.count > 0 && confirmPassword.count > 0 && password != confirmPassword {
+                Text(L10n.Signup.Password.different).foregroundColor(SwiftUI.Color.red)
+            }
+        }
     }
 }
 
