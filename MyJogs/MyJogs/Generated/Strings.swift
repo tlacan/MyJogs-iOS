@@ -47,6 +47,29 @@ internal enum L10n {
     }
   }
 
+  internal enum Jog {
+
+    internal enum Pause {
+      /// Pause
+      internal static let button = L10n.tr("Localizable", "JOG.PAUSE.BUTTON")
+    }
+
+    internal enum Resume {
+      /// Resume
+      internal static let button = L10n.tr("Localizable", "JOG.RESUME.BUTTON")
+    }
+
+    internal enum Start {
+      /// Start
+      internal static let button = L10n.tr("Localizable", "JOG.START.BUTTON")
+    }
+
+    internal enum Stop {
+      /// Stop
+      internal static let button = L10n.tr("Localizable", "JOG.STOP.BUTTON")
+    }
+  }
+
   internal enum Login {
     /// My Jogs
     internal static let title = L10n.tr("Localizable", "LOGIN.TITLE")

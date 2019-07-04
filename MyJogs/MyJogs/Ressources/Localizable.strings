@@ -35,6 +35,15 @@
 "TABBAR.ITEM.2" = "History";
 "TABBAR.ITEM.3" = "Settings";
 
+/*
+ *********************************
+ ** Jog view
+ */
+
+"JOG.START.BUTTON" = "Start";
+"JOG.PAUSE.BUTTON" = "Pause";
+"JOG.RESUME.BUTTON" = "Resume";
+"JOG.STOP.BUTTON" = "Stop";
 
 /*
  *********************************

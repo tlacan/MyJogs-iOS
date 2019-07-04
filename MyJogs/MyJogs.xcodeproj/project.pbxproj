@@ -62,6 +62,7 @@
 		1D4423EE22BF5D8B0017C807 /* ServiceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4423ED22BF5D8B0017C807 /* ServiceState.swift */; };
 		1D4423F222BFC07E0017C807 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D4423F122BFC07E0017C807 /* UserService.swift */; };
 		1DEEF1E422BF2C0B001F1ACF /* RecordUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEEF1E322BF2C0B001F1ACF /* RecordUIView.swift */; };
+		1DF2DD6E22CE1B4800B8AE63 /* JogUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DF2DD6D22CE1B4800B8AE63 /* JogUIView.swift */; };
 		3DBA7474214DB37E2A02EE28 /* Pods_MyJogs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA77DD9540BE3E8B1E3D562C /* Pods_MyJogs.framework */; };
 		456CC8C16CBA217D16B7A805 /* Pods_MyJogsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7C4DF8BCDC04D5423049E65 /* Pods_MyJogsUITests.framework */; };
 		A1CA5EB41B0FAD30CACA943D /* Pods_MyJogsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DA1A862972638463062B84B /* Pods_MyJogsTests.framework */; };
@@ -148,6 +149,7 @@
 		1D4423ED22BF5D8B0017C807 /* ServiceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceState.swift; sourceTree = "<group>"; };
 		1D4423F122BFC07E0017C807 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		1DEEF1E322BF2C0B001F1ACF /* RecordUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordUIView.swift; sourceTree = "<group>"; };
+		1DF2DD6D22CE1B4800B8AE63 /* JogUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JogUIView.swift; sourceTree = "<group>"; };
 		4DA1A862972638463062B84B /* Pods_MyJogsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyJogsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9DA5C85827C01154D09ECA /* Pods-MyJogsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJogsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyJogsUITests/Pods-MyJogsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		644FD53219CFB59BD14C150B /* Pods-MyJogs.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyJogs.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyJogs/Pods-MyJogs.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,7 +201,6 @@
 		1D0B1F6E2278370E0054B15B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1D19640122C5E20D00CC0DF6 /* UIViews */,
 				1D1C3A7922716B750031A9BC /* FirstViewController.swift */,
 				1D1C3A7B22716B750031A9BC /* SecondViewController.swift */,
 				1D1C3A7D22716B750031A9BC /* Main.storyboard */,
@@ -336,6 +337,7 @@
 				1DEEF1E322BF2C0B001F1ACF /* RecordUIView.swift */,
 				1D1963F822C4B24E00CC0DF6 /* LoginUIView.swift */,
 				1D19640522C6120A00CC0DF6 /* SignUIView.swift */,
+				1DF2DD6D22CE1B4800B8AE63 /* JogUIView.swift */,
 			);
 			path = UIViews;
 			sourceTree = "<group>";
@@ -378,6 +380,7 @@
 				1D0B1F71227837D40054B15B /* Engine */,
 				1D0B1F70227837C30054B15B /* Model */,
 				1D0B1F6F227837B90054B15B /* Views */,
+				1D19640122C5E20D00CC0DF6 /* UIViews */,
 				1D0B1F6E2278370E0054B15B /* Controllers */,
 				1D0B1F6B227836AA0054B15B /* Ressources */,
 				1D1C3A7722716B750031A9BC /* AppDelegate.swift */,
@@ -767,6 +770,7 @@
 				1D0B1F7B227839550054B15B /* Fonts.swift in Sources */,
 				1D19640022C5B95A00CC0DF6 /* Constants.swift in Sources */,
 				1D130DE722B0B23400A2453A /* RecordViewController.swift in Sources */,
+				1DF2DD6E22CE1B4800B8AE63 /* JogUIView.swift in Sources */,
 				1D4423EE22BF5D8B0017C807 /* ServiceState.swift in Sources */,
 				1D0B1F982279AD970054B15B /* Formatter.swift in Sources */,
 				1D0B1FA02279B3BB0054B15B /* Data+Extensions.swift in Sources */,

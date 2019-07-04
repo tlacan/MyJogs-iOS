@@ -36,11 +36,16 @@ class TabbarController: UITabBarController {
         let recordUITabBarItem = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage2, tag: 1)
         recordUIHosting.tabBarItem = recordUITabBarItem
         
+        let timerUIHosting = UIHostingController(rootView: JogUIView(engine: engine).environmentObject(engine.jogsService))
+        let tabBarImage3 = Asset.iconShoe.image.resizeWithWidth(width: 20)
+        let timerUITabBarItem = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage3, tag: 1)
+        timerUIHosting.tabBarItem = timerUITabBarItem
+        
         let loginUIHosting = UIHostingController(rootView: LoginUIView(engine: engine))
-        let tabBarImage3 = Asset.iconLogoBis.image.resizeWithWidth(width: 20)
-        let recordUITabBarItem2 = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage3, tag: 2)
+        let tabBarImage4 = Asset.iconLogoBis.image.resizeWithWidth(width: 20)
+        let recordUITabBarItem2 = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage4, tag: 2)
         loginUIHosting.tabBarItem = recordUITabBarItem2
         
-        setViewControllers([recordViewController, recordUIHosting, loginUIHosting], animated: true)
+        setViewControllers([recordViewController, recordUIHosting, timerUIHosting, loginUIHosting], animated: true)
     }
 }
