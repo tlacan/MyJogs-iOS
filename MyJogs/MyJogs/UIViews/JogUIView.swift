@@ -18,6 +18,8 @@ struct JogUIView: View {
     @State var paused: Bool = false
     @State var date: Date = Date(timeIntervalSince1970: 0)
     @State var speed: Double = 0
+    @State var currentJog: JogModel?
+    @State var creationError: String?
     
     var body: some View {
         VStack(alignment: .center) {
@@ -58,8 +60,16 @@ struct JogUIView: View {
     }
     
     func stopTimer() {
-        self.engine?.locationService.stopTracking()
+        engine?.locationService.stopTracking()
         timer?.invalidate()
+        currentJog?.endDate = Date()
+        guard let currentJog = currentJog else { return }
+        engine?.jogsService.createJog(currentJog, onDone: { (error) in
+            if let error = error {
+                self.creationError = error.localizedDescription
+            }
+            self.creationError = nil
+        })
     }
     
     func updateTimeString() {
@@ -67,6 +77,9 @@ struct JogUIView: View {
     }
     
     func initTimer() {
+        currentJog = currentJog ?? JogModel(id: nil,
+                                            userId: engine?.userService.user?.userId ?? 0,
+                                            position: [], beginDate: Date(), endDate: nil)
         self.engine?.locationService.register(observer: self)
         self.engine?.locationService.startTracking()
         self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (time) in
@@ -78,7 +91,8 @@ struct JogUIView: View {
 
 extension JogUIView: LocationServiceObserver {
     func locationService(locationService: LocationService, didUpdateLocation location: CLLocation?) {
-        return
+        guard let location = location else { return }
+        self.currentJog?.position.append(PositionModel(lat: location.coordinate.latitude, lon: location.coordinate.longitude))
     }
     func locationService(locationService: LocationService, didChangeAuthorization status: CLAuthorizationStatus) {
         return
