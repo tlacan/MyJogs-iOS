@@ -44,6 +44,7 @@
 "JOG.PAUSE.BUTTON" = "Pause";
 "JOG.RESUME.BUTTON" = "Resume";
 "JOG.STOP.BUTTON" = "Stop";
+"JOG.SPEED.LABEL" = "%@ Km/h";
 
 /*
  *********************************

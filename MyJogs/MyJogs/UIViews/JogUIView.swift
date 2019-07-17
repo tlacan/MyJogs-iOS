@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct JogUIView: View {
     @EnvironmentObject var jogsService: JogsService
@@ -16,9 +17,13 @@ struct JogUIView: View {
     @State var timer: Timer?
     @State var paused: Bool = false
     @State var date: Date = Date(timeIntervalSince1970: 0)
+    @State var speed: Double = 0
     
     var body: some View {
         VStack(alignment: .center) {
+            if timer != nil && !paused {
+                Text(L10n.Jog.Speed.label(String(speed))).color(SwiftUI.Color.white).font(Font.system(size: 80))
+            }
             Text(timerText).color(SwiftUI.Color.white).font(Font.system(size: 60))
             HStack(alignment: .center) {
                 if timer == nil {
@@ -33,14 +38,19 @@ struct JogUIView: View {
                                   action: { self.stopTimer() })
                 }
             }
+        }.onAppear {
+            //self.engine?.locationService.register(observer: self)
+        }.onDisappear {
+            self.engine?.locationService.unregister(observer: self)
         }.frame(minWidth: UIScreen.main.bounds.width, minHeight: UIScreen.main.bounds.height)
-            .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
+         .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
     }
     
     func pauseTimer() {
         if !paused {
             timer?.invalidate()
             paused = true
+            self.engine?.locationService.stopTracking()
             return
         }
         initTimer()
@@ -48,6 +58,7 @@ struct JogUIView: View {
     }
     
     func stopTimer() {
+        self.engine?.locationService.stopTracking()
         timer?.invalidate()
     }
     
@@ -56,10 +67,24 @@ struct JogUIView: View {
     }
     
     func initTimer() {
+        self.engine?.locationService.register(observer: self)
+        self.engine?.locationService.startTracking()
         self.timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (time) in
             self.date.addTimeInterval(time.timeInterval)
             self.updateTimeString()
         }
+    }
+}
+
+extension JogUIView: LocationServiceObserver {
+    func locationService(locationService: LocationService, didUpdateLocation location: CLLocation?) {
+        return
+    }
+    func locationService(locationService: LocationService, didChangeAuthorization status: CLAuthorizationStatus) {
+        return
+    }
+    func loactionService(locationService: LocationService, didChangeSpeed speed: CLLocationSpeed) {
+        self.speed = speed
     }
 }
 

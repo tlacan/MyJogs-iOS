@@ -59,6 +59,13 @@ internal enum L10n {
       internal static let button = L10n.tr("Localizable", "JOG.RESUME.BUTTON")
     }
 
+    internal enum Speed {
+      /// %@ Km/h
+      internal static func label(_ p1: String) -> String {
+        return L10n.tr("Localizable", "JOG.SPEED.LABEL", p1)
+      }
+    }
+
     internal enum Start {
       /// Start
       internal static let button = L10n.tr("Localizable", "JOG.START.BUTTON")

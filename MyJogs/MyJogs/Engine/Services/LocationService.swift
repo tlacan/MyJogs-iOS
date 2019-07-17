@@ -9,36 +9,37 @@
 import Foundation
 import CoreLocation
 
-@objc public protocol LocationServiceObserver: class {
-    @objc func locationService(locationService: LocationService, didUpdateLocation location: CLLocation?)
-    @objc func locationService(locationService: LocationService, didChangeAuthorization status: CLAuthorizationStatus)
+public protocol LocationServiceObserver {
+    func locationService(locationService: LocationService, didUpdateLocation location: CLLocation?)
+    func locationService(locationService: LocationService, didChangeAuthorization status: CLAuthorizationStatus)
+    func loactionService(locationService: LocationService, didChangeSpeed speed: CLLocationSpeed)
 }
 
 public class LocationService: NSObject, CLLocationManagerDelegate {
-    
-    @objc var locationManager = CLLocationManager()
+    var locationManager = CLLocationManager()
     fileprivate(set) var observers = WeakObserverOrderedSet<LocationServiceObserver>()
     
     override init() {
         super.init()
         locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
     public var hasAskedForGeolocation: Bool {
         return CLLocationManager.authorizationStatus() != .notDetermined
     }
     
-    @objc public var deniedGeolocationAccess: Bool {
+    public var deniedGeolocationAccess: Bool {
         return CLLocationManager.authorizationStatus() == .denied
             || CLLocationManager.authorizationStatus() == .restricted
     }
     
-    @objc public var hasGeolocationAccess: Bool {
+    public var hasGeolocationAccess: Bool {
         return CLLocationManager.authorizationStatus() == .authorizedWhenInUse
             || CLLocationManager.authorizationStatus() == .authorizedAlways
     }
     
-    @objc public func register(observer: LocationServiceObserver) {
+    public func register(observer: LocationServiceObserver) {
         assert(Thread.isMainThread, "[LocationService] register observer from background thread")
         observers.add(value: observer)
     }
@@ -47,10 +48,22 @@ public class LocationService: NSObject, CLLocationManagerDelegate {
         observers.remove(value: observer)
     }
     
+    func startTracking() {
+        if !hasAskedForGeolocation {
+            locationManager.requestAlwaysAuthorization()
+        }
+        locationManager.startUpdatingLocation()
+    }
+    
+    func stopTracking() {
+        locationManager.stopUpdatingLocation()
+    }
+    
     // MARK: - CLLocationManagerDelegate
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             observers.invoke { $0.locationService(locationService: self, didUpdateLocation: location) }
+            observers.invoke { $0.loactionService(locationService: self, didChangeSpeed: location.speed)}
         }
     }
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
