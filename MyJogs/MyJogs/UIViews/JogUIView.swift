@@ -17,14 +17,14 @@ struct JogUIView: View {
     @State var timer: Timer?
     @State var paused: Bool = false
     @State var date: Date = Date(timeIntervalSince1970: 0)
-    @State var speed: Double = 0
+    @State var speed: Double?
     @State var currentJog: JogModel?
     @State var creationError: String?
     
     var body: some View {
         VStack(alignment: .center) {
-            if timer != nil && !paused {
-                Text(L10n.Jog.Speed.label(String(speed))).color(SwiftUI.Color.white).font(Font.system(size: 80))
+            if speed != nil {
+                Text(L10n.Jog.Speed.label(String(speed ?? 0))).color(SwiftUI.Color.white).font(Font.system(size: 80))
             }
             Text(timerText).color(SwiftUI.Color.white).font(Font.system(size: 60))
             HStack(alignment: .center) {
@@ -45,7 +45,9 @@ struct JogUIView: View {
         }.onDisappear {
             self.engine?.locationService.unregister(observer: self)
         }.frame(minWidth: UIScreen.main.bounds.width, minHeight: UIScreen.main.bounds.height)
-         .background(SwiftUI.Color.black.edgesIgnoringSafeArea(.all))
+         .background(
+            currentBackground()
+        )
     }
     
     func pauseTimer() {
@@ -57,6 +59,17 @@ struct JogUIView: View {
         }
         initTimer()
         paused = false
+    }
+    
+    func currentBackground() -> some View {
+        if timer == nil {
+            return SwiftUI.Color.black.edgesIgnoringSafeArea(.all)
+        }
+        return SwiftUI.Color.gray.edgesIgnoringSafeArea(.all)
+    }
+    
+    func isSpeedValid() {
+        
     }
     
     func stopTimer() {
