@@ -40,6 +40,8 @@
  ** Jog view
  */
 
+"JOG.SAVE.BUTTON" = "Save";
+"JOG.CANCEL.BUTTON" = "Cancel";
 "JOG.START.BUTTON" = "Start";
 "JOG.PAUSE.BUTTON" = "Pause";
 "JOG.RESUME.BUTTON" = "Resume";
@@ -80,7 +82,7 @@
 
 "APIERROR.UNHANDLED_ERROR_CODE" = "Unknown error";
 "APIERROR.NONETWORK_ERROR" = "Lost network connection";
-"APIERROR.NETWORK_ERROR" = "Netnork error";
+"APIERROR.NETWORK_ERROR" = "Network error";
 "APIERROR.COMMON" = "An error happened. Retry in a moment";
 "APIERROR.UNEXPECTED_RESPONSE" = "Unexpected error";
 "APIERROR.UNEXPECTED_ERROR" = "Unexpected error";

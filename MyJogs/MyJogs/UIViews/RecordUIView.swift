@@ -34,7 +34,7 @@ struct RecordUIView: View {
                     )
             )
             .presentation($showingAlert) {
-                Alert(title: Text(""), message: Text("Une erreur est survenur"), dismissButton: .default(Text("OK")))
+                Alert(title: Text(""), message: Text(L10n.Apierror.common), dismissButton: .default(Text(L10n.Common.ok)))
             }
         }
     }

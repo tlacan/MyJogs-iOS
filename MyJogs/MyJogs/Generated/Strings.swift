@@ -15,7 +15,7 @@ internal enum L10n {
     internal static let common = L10n.tr("Localizable", "APIERROR.COMMON")
     /// Name or Password unknown (reconnect)
     internal static let loginError = L10n.tr("Localizable", "APIERROR.LOGIN_ERROR")
-    /// Netnork error
+    /// Network error
     internal static let networkError = L10n.tr("Localizable", "APIERROR.NETWORK_ERROR")
     /// Lost network connection
     internal static let nonetworkError = L10n.tr("Localizable", "APIERROR.NONETWORK_ERROR")
@@ -49,6 +49,11 @@ internal enum L10n {
 
   internal enum Jog {
 
+    internal enum Cancel {
+      /// Cancel
+      internal static let button = L10n.tr("Localizable", "JOG.CANCEL.BUTTON")
+    }
+
     internal enum Pause {
       /// Pause
       internal static let button = L10n.tr("Localizable", "JOG.PAUSE.BUTTON")
@@ -57,6 +62,11 @@ internal enum L10n {
     internal enum Resume {
       /// Resume
       internal static let button = L10n.tr("Localizable", "JOG.RESUME.BUTTON")
+    }
+
+    internal enum Save {
+      /// Save
+      internal static let button = L10n.tr("Localizable", "JOG.SAVE.BUTTON")
     }
 
     internal enum Speed {

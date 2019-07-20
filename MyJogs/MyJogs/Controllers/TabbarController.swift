@@ -36,7 +36,9 @@ class TabbarController: UITabBarController {
         let recordUITabBarItem = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage2, tag: 1)
         recordUIHosting.tabBarItem = recordUITabBarItem
         
-        let timerUIHosting = UIHostingController(rootView: JogUIView(engine: engine).environmentObject(engine.jogsService))
+        let timerUIHosting = UIHostingController(rootView: JogUIView(engine: engine, successClosure: { [weak self] in
+            self?.selectedIndex = 0
+        }).environmentObject(engine.locationService))
         let tabBarImage3 = Asset.iconShoe.image.resizeWithWidth(width: 20)
         let timerUITabBarItem = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage3, tag: 1)
         timerUIHosting.tabBarItem = timerUITabBarItem

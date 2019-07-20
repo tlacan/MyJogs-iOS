@@ -8,6 +8,8 @@
 
 import Foundation
 import CoreLocation
+import SwiftUI
+import Combine
 
 public protocol LocationServiceObserver {
     func locationService(locationService: LocationService, didUpdateLocation location: CLLocation?)
@@ -15,9 +17,13 @@ public protocol LocationServiceObserver {
     func loactionService(locationService: LocationService, didChangeSpeed speed: CLLocationSpeed)
 }
 
-public class LocationService: NSObject, CLLocationManagerDelegate {
+public class LocationService: NSObject, CLLocationManagerDelegate, BindableObject {
     var locationManager = CLLocationManager()
     fileprivate(set) var observers = WeakObserverOrderedSet<LocationServiceObserver>()
+    
+    var lastLocation: CLLocation?
+    var currentJog: JogModel?
+    public var didChange = PassthroughSubject<LocationService, Never>()
     
     override init() {
         super.init()
@@ -48,20 +54,28 @@ public class LocationService: NSObject, CLLocationManagerDelegate {
         observers.remove(value: observer)
     }
     
-    func startTracking() {
+    func startTracking(currentJog: JogModel) {
         if !hasAskedForGeolocation {
             locationManager.requestAlwaysAuthorization()
         }
+        self.currentJog = currentJog
         locationManager.startUpdatingLocation()
     }
     
-    func stopTracking() {
+    func stopTracking(duration: Date?) {
+        if let duration = duration {
+            currentJog?.endDate = currentJog?.beginDate.addingTimeInterval(duration.timeIntervalSince1970)
+        }
         locationManager.stopUpdatingLocation()
+        lastLocation = nil
     }
     
     // MARK: - CLLocationManagerDelegate
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
+            lastLocation = location
+            currentJog?.position.append(PositionModel(lat: location.coordinate.latitude, lon: location.coordinate.longitude))
+            didChange.send(self)
             observers.invoke { $0.locationService(locationService: self, didUpdateLocation: location) }
             observers.invoke { $0.loactionService(locationService: self, didChangeSpeed: location.speed)}
         }
