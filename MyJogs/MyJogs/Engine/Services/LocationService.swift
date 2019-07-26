@@ -64,7 +64,8 @@ public class LocationService: NSObject, CLLocationManagerDelegate, BindableObjec
     
     func stopTracking(duration: Date?) {
         if let duration = duration {
-            currentJog?.endDate = currentJog?.beginDate.addingTimeInterval(duration.timeIntervalSince1970)
+            let endDate = currentJog?.beginDate.addingTimeInterval(duration.timeIntervalSince1970)
+            currentJog?.endDate = endDate
         }
         locationManager.stopUpdatingLocation()
         lastLocation = nil

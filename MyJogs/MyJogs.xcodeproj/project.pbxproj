@@ -53,6 +53,7 @@
 		1D1C3A9A22716B760031A9BC /* MyJogsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1C3A9922716B760031A9BC /* MyJogsUITests.swift */; };
 		1D1D1733228D6E1F00749C71 /* OnBoardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D1D1732228D6E1F00749C71 /* OnBoardingCollectionViewCell.xib */; };
 		1D1D17352290F00B00749C71 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1D17342290F00B00749C71 /* UIViewController+Extensions.swift */; };
+		1D2FC0A722EAA55E00A98ADF /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D2FC0A622EAA55E00A98ADF /* Array+Extensions.swift */; };
 		1D32036D228B067500EB8544 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D32036C228B067500EB8544 /* OnBoardingViewController.swift */; };
 		1D32036F228B076D00EB8544 /* OnBoardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D32036E228B076D00EB8544 /* OnBoardingViewController.xib */; };
 		1D320372228B0CE600EB8544 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D320371228B0CE500EB8544 /* OnBoardingCollectionViewCell.swift */; };
@@ -140,6 +141,7 @@
 		1D1C3A9B22716B760031A9BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1D1D1732228D6E1F00749C71 /* OnBoardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		1D1D17342290F00B00749C71 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		1D2FC0A622EAA55E00A98ADF /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		1D32036C228B067500EB8544 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; };
 		1D32036E228B076D00EB8544 /* OnBoardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnBoardingViewController.xib; sourceTree = "<group>"; };
 		1D320371228B0CE500EB8544 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				1D130DE822B0B80C00A2453A /* UIImage+Extensions.swift */,
 				1D4423EB22BF58D90017C807 /* Encoadable+Extension.swift */,
 				1D1963FF22C5B95A00CC0DF6 /* Constants.swift */,
+				1D2FC0A622EAA55E00A98ADF /* Array+Extensions.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -759,6 +762,7 @@
 				1D0B1F9E2279AEFE0054B15B /* WeakServiceOrderedSet.swift in Sources */,
 				1D44216222BF511C0017C807 /* JogsService.swift in Sources */,
 				1D19640322C5E22400CC0DF6 /* LottieUIView.swift in Sources */,
+				1D2FC0A722EAA55E00A98ADF /* Array+Extensions.swift in Sources */,
 				1D0B1FA22279B42B0054B15B /* URLRequest+Extension.swift in Sources */,
 				1D0B1F7A227839550054B15B /* Assets.swift in Sources */,
 				1D0B1F9C2279AE2F0054B15B /* Date+Extensions.swift in Sources */,

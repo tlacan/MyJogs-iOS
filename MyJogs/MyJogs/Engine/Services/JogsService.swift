@@ -47,6 +47,14 @@ public class JogsService: BindableObject {
         }
     }
     
+    func initDistancesIfNeeded() {
+        jogs = jogs.map { value in
+            var jog = value
+            jog.totalDistance = jog.computedDistance()
+            return jog
+        }
+    }
+    
     func register(observer: JogsServiceObserver) {
         observers.add(value: observer)
     }
