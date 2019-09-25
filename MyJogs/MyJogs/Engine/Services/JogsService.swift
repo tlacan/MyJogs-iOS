@@ -14,7 +14,7 @@ public protocol JogsServiceObserver {
     func onJogService(jogService: JogsService, didUpdate state: ServiceState)
 }
 
-public class JogsService: BindableObject {
+public class JogsService: ObservableObject {
     static let kFileStore = "jogs"
     
     let networkClient: NetworkClient

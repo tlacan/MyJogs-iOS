@@ -36,9 +36,9 @@ struct JogUIView: View {
                 }
             } else {
                 if locationService.lastLocation != nil {
-                    Text(L10n.Jog.Speed.label(String(currentSpeed()))).color(SwiftUI.Color.white).font(Font.system(size: 80))
+                    Text(L10n.Jog.Speed.label(String(currentSpeed()))).foregroundColor(SwiftUI.Color.white).font(Font.system(size: 80))
                 }
-                Text(timerText).color(SwiftUI.Color.white).font(Font.system(size: 60))
+                Text(timerText).foregroundColor(SwiftUI.Color.white).font(Font.system(size: 60))
                 HStack(alignment: .center) {
                     if timer == nil {
                         JogButtonView(text: L10n.Jog.Start.button, color: SwiftUI.Color.green,
@@ -56,15 +56,15 @@ struct JogUIView: View {
         }.frame(minWidth: UIScreen.main.bounds.width, minHeight: UIScreen.main.bounds.height)
          .background(LinearGradient(gradient:
             Gradient(colors: [.black, gradientColor(), .black, .black, .black]),
-                                    startPoint: .top, endPoint: .bottom), cornerRadius: 0)
-        .presentation($showingAlert) {
+                                    startPoint: .top, endPoint: .bottom))
+            .alert(isPresented: $showingAlert) {
                 Alert(title: Text(""),
                       message: Text(creationError ?? L10n.Apierror.common),
-                      dismissButton: .default(Text(L10n.Common.ok), onTrigger: {
+                      dismissButton: .default(Text(L10n.Common.ok), action: {
                         self.retryMode = true
                         self.showingAlert = false
                 }))
-        }
+            }
     }
     
     func pauseTimer() {
@@ -158,7 +158,7 @@ struct JogButtonView: View {
     
     var body: some View {
         Button(action: { self.action() }) {
-            Text(text).color(color).padding(30)
+            Text(text).foregroundColor(color).padding(30)
         }.background(color.opacity(0.3))
             .frame(width: 130)
             .mask(Circle())

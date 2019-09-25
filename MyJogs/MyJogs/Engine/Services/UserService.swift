@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-class UserService: BindableObject {
+class UserService: ObservableObject {
     static let kFileStore = "user"
     
     let expirableDataStore: ExpirableFileDataStore

@@ -17,7 +17,7 @@ struct RecordUIView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(jogsService.jogs.identified(by: \.id)) { jog in
+                ForEach(jogsService.jogs, id: \.id) { jog in
                     RecordRow(jog: jog)
                 }
             }
@@ -34,7 +34,7 @@ struct RecordUIView: View {
                         label: { Text("Create") }
                     )
             )
-            .presentation($showingAlert) {
+            .alert(isPresented: $showingAlert) {
                 Alert(title: Text(""), message: Text(L10n.Apierror.common), dismissButton: .default(Text(L10n.Common.ok)))
             }
         }.onAppear {

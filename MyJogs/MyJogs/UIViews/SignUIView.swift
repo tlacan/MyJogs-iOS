@@ -9,8 +9,14 @@
 import SwiftUI
 
 struct SignUIView: View {
-     @Environment(\.isPresented) var isPresented: Binding<Bool>?
+    var isPresented: Bool = false
     
+    static let customPriority: Double = 999
+    static let lowPriority: Double = 1
+    static let customWidth: CGFloat = 100
+    static let textFieldRadius: CGFloat = 5
+    static let buttonRadius: CGFloat = 18
+    static let widthSize = UIScreen.main.bounds.width - CGFloat(40)
     let engine: Engine?
     @State private var email: String = ""
     @State private var password: String = ""
@@ -21,55 +27,60 @@ struct SignUIView: View {
     @State var displayPasswordErrors = false
     
     var body: some View {
+        
         ScrollView {
             VStack(alignment: .leading) {
                 SignUpNavBarView(engine: engine, action: { self.dismissView() })
                 LottieUI(name: K.Lottie.run).background(SwiftUI.Color.yellow)
                 HStack {
-                    Text(L10n.Signup.Email.textfield).layoutPriority(999).frame(width: 100, alignment: .leading)
-                    TextField($email, placeholder: Text(L10n.Common.Textfield.required), onEditingChanged: { (editing) in
+                    Text(L10n.Signup.Email.textfield).layoutPriority(SignUIView.customPriority).frame(width: SignUIView.customWidth, alignment: .leading)
+                    TextField(L10n.Common.Textfield.required, text: $email, onEditingChanged: { (editing) in
                         if !editing {
                             self.displayNotValidEmail = !self.email.isValidEmail()
                         }
-                    }).background(Color.clear, cornerRadius: 5.0)
-                        .layoutPriority(1)
+                    }).background(Color.clear)
+                        .mask(RoundedRectangle(cornerRadius: SignUIView.textFieldRadius))
+                        .layoutPriority(SignUIView.lowPriority)
                     
-                }.frame(minWidth: UIScreen.main.bounds.width - 40, maxWidth: UIScreen.main.bounds.width - 40)
+                }.frame(minWidth: SignUIView.widthSize, maxWidth: SignUIView.widthSize)
+                 
                 if displayNotValidEmail {
                     Text(L10n.Signup.Email.notvalid).foregroundColor(SwiftUI.Color.red)
                 }
                 
-                Divider().foregroundColor(.black).padding(.bottom, 3)
+                Divider().foregroundColor(.black).padding(.bottom, CGFloat(3))
                 HStack {
-                    Text(L10n.Signup.Password.textfield).layoutPriority(999).frame(width: 100, alignment: .leading)
-                    
-                    SecureField($password, placeholder: Text(L10n.Common.Textfield.required)).background(Color.clear, cornerRadius: 5.0)
-                      .layoutPriority(1)
-                }.frame(minWidth: UIScreen.main.bounds.width - 40, maxWidth: UIScreen.main.bounds.width - 40)
+                    Text(L10n.Signup.Password.textfield).layoutPriority(SignUIView.customPriority).frame(width: SignUIView.customWidth, alignment: .leading)
+                    SecureField(L10n.Common.Textfield.required, text: $password).background(Color.clear)
+                        .mask(RoundedRectangle(cornerRadius: SignUIView.textFieldRadius))
+                        .layoutPriority(SignUIView.lowPriority)
+                }.frame(minWidth: SignUIView.widthSize, maxWidth: SignUIView.widthSize)
                 
-                Divider().foregroundColor(.black).padding(.bottom, 3)
+                Divider().foregroundColor(.black).padding(.bottom, CGFloat(3))
                 HStack {
-                    Text(L10n.Signup.PasswordConfirm.textfield).layoutPriority(999).frame(width: 160, alignment: .leading)
-                    SecureField($confirmPassword, placeholder: Text(L10n.Common.Textfield.required))
-                        .background(Color.clear, cornerRadius: 5.0)
-                        .layoutPriority(1)
-                }.frame(minWidth: UIScreen.main.bounds.width - 40, maxWidth: UIScreen.main.bounds.width - 40)
+                    Text(L10n.Signup.PasswordConfirm.textfield).layoutPriority(SignUIView.customPriority).frame(width: CGFloat(160), alignment: .leading)
+                    SecureField(L10n.Common.Textfield.required, text: $confirmPassword)
+                        .background(Color.clear)
+                        .mask(RoundedRectangle(cornerRadius: SignUIView.textFieldRadius))
+                        .layoutPriority(SignUIView.lowPriority)
+                }.frame(minWidth: SignUIView.widthSize, maxWidth: SignUIView.widthSize)
                 
                 PasswordErrorView(password: password, confirmPassword: confirmPassword)
                 
                 HStack {
                     Spacer()
                     Button(action: { self.signUpAction() }) {
-                        Text(L10n.Signup.Signup.button).color(updateButtonState() ? SwiftUI.Color.black : SwiftUI.Color.gray)
+                        Text(L10n.Signup.Signup.button).foregroundColor(updateButtonState() ? SwiftUI.Color.black : SwiftUI.Color.gray)
                     }.disabled(!updateButtonState())
                     .padding(10)
-                    .border(updateButtonState() ? SwiftUI.Color.black : SwiftUI.Color.gray, width: 1, cornerRadius: 18)
+                    .border(updateButtonState() ? SwiftUI.Color.black : SwiftUI.Color.gray, width: 1)
+                    .mask(RoundedRectangle(cornerRadius: SignUIView.buttonRadius))
                     Spacer()
-                }.padding(.top, 20)
-            }.padding([.leading, .trailing], 20)
+                }.padding(.top, CGFloat(20))
+            }.padding([.leading, .trailing], CGFloat(20))
         }.frame(minWidth: UIScreen.main.bounds.width, maxWidth: UIScreen.main.bounds.width)
         .background(SwiftUI.Color.yellow.edgesIgnoringSafeArea(.all))
-        .presentation($showingAlert) {
+        .alert(isPresented: $showingAlert) {
             Alert(title: Text(""), message: Text(showingAlertMessage), dismissButton: .default(Text(L10n.Common.ok)))
         }
     }
@@ -85,7 +96,7 @@ struct SignUIView: View {
         })
     }
     func dismissView() {
-        isPresented?.value = false
+        //isPresented = false
     }
     
     func updateButtonState() -> Bool {
@@ -121,6 +132,7 @@ struct PasswordErrorView: View {
 struct SignUpNavBarView: View {
     let engine: Engine?
     let action: () -> Void
+    let fontSize: CGFloat = 40
     
     init(engine: Engine?, action: @escaping () -> Void) {
         self.engine = engine
@@ -131,14 +143,15 @@ struct SignUpNavBarView: View {
         HStack {
             Spacer()
             Spacer()
-            Text(L10n.Signup.title).font(Font.custom(K.Fonts.appTitleFont, size: 40))
+            
+            Text(L10n.Signup.title).font(Font.custom(K.Fonts.appTitleFont, size: fontSize))
             Spacer()
             Button(action: {
                 self.action()
             }, label: {
-                Text(L10n.Signup.Baritem.login).color(.black)
+                Text(L10n.Signup.Baritem.login).foregroundColor(.black)
             }).padding(6)
-                .border(SwiftUI.Color.black, width: 1, cornerRadius: 12)
+            .overlay(RoundedRectangle(cornerRadius: 12).stroke(Color.black, lineWidth: 1))
         }
     }
 }
@@ -146,7 +159,7 @@ struct SignUpNavBarView: View {
 #if DEBUG
 struct SignUIView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUIView(engine: nil)
+        SignUIView(isPresented: true, engine: nil)
     }
 }
 #endif

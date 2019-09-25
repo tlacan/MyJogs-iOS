@@ -17,7 +17,7 @@ public protocol LocationServiceObserver {
     func loactionService(locationService: LocationService, didChangeSpeed speed: CLLocationSpeed)
 }
 
-public class LocationService: NSObject, CLLocationManagerDelegate, BindableObject {
+public class LocationService: NSObject, CLLocationManagerDelegate, ObservableObject {
     var locationManager = CLLocationManager()
     fileprivate(set) var observers = WeakObserverOrderedSet<LocationServiceObserver>()
     
