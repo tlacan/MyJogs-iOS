@@ -96,6 +96,7 @@ struct SignUIView: View {
         })
     }
     func dismissView() {
+        
         //isPresented = false
     }
     

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0930"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3D7F9FC7F16FBEF67987CDBC1A77BFCE"
+               BlueprintIdentifier = "92077976CB3E088351E515981DC39115"
+               BuildableName = "Bagel.framework"
                BlueprintName = "Bagel"
-               ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "Bagel.framework">
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -8,6 +8,8 @@
 
 import SwiftUI
 
+
+
 struct LoginUIView: View {
     let engine: Engine?
     @State private var email: String = ""
@@ -27,7 +29,6 @@ struct LoginUIView: View {
         
         ScrollView {
             VStack(alignment: .leading) {
-            //VStack {
                  LoginNavBarView(engine: engine)
                  LottieUI(name: K.Lottie.run).background(SwiftUI.Color.yellow)
                  HStack {
@@ -45,7 +46,7 @@ struct LoginUIView: View {
                     Text(L10n.Login.Password.textfield).layoutPriority(LoginUIView.maxPriority).frame(width: LoginUIView.emailWidth, alignment: .leading)
                  SecureField(L10n.Common.Textfield.required, text: $password)
                  .background(Color.clear)
-                    .mask(RoundedRectangle(cornerRadius: LoginUIView.cornerRadiusValue))
+                    .cornerRadius(LoginUIView.cornerRadiusValue)
                     .layoutPriority(LoginUIView.minPriority)
                  }.frame(minWidth: UIScreen.main.bounds.width - CGFloat(40),
                  maxWidth: UIScreen.main.bounds.width - CGFloat(40))
@@ -57,8 +58,8 @@ struct LoginUIView: View {
                         .foregroundColor(updateButtonState() ? SwiftUI.Color.black : SwiftUI.Color.gray)
                     }.disabled(!updateButtonState())
                     .padding(10)
-                    .border(updateButtonState() ? SwiftUI.Color.black : SwiftUI.Color.gray, width: 1)
-                        .mask(RoundedRectangle(cornerRadius: LoginUIView.mainRadius))
+                    .overlay(RoundedRectangle(cornerRadius: LoginUIView.mainRadius)
+                    .stroke(updateButtonState() ? SwiftUI.Color.black : SwiftUI.Color.gray, lineWidth: 1))
                     Spacer()
                  }.padding(.top, LoginUIView.topPadding)
             }.padding([.leading, .trailing], 20)
@@ -89,25 +90,22 @@ struct LoginUIView: View {
 struct LoginNavBarView: View {
     let engine: Engine?
     static let textSize: CGFloat = 40
-    var signView = SignUIView(engine: nil)
     
     init(engine: Engine?) {
         self.engine = engine
-        signView = SignUIView(engine: engine)
     }
     
     var body: some View {
         HStack {
-            
             Spacer()
             Spacer()
             Text(L10n.Login.title).font(Font.custom(K.Fonts.appTitleFont, size: LoginNavBarView.textSize))
             Spacer()
-            NavigationLink(destination: signView, label: {
+            NavigationLink(destination: SignUIView(engine: engine), label: {
                 Text(L10n.Login.Baritem.signup).foregroundColor(.black)
             }).padding(6)
-                .border(SwiftUI.Color.black, width: 1)
-                .mask(RoundedRectangle(cornerRadius: 12))
+                .overlay(RoundedRectangle(cornerRadius: 12)
+                .stroke(SwiftUI.Color.black, lineWidth: 1))
         }
     }
 }

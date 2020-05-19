@@ -43,11 +43,16 @@ class TabbarController: UITabBarController {
         let timerUITabBarItem = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage3, tag: 1)
         timerUIHosting.tabBarItem = timerUITabBarItem
         
+        
         let loginUIHosting = UIHostingController(rootView: LoginUIView(engine: engine))
         let tabBarImage4 = Asset.iconLogoBis.image.resizeWithWidth(width: 20)
         let recordUITabBarItem2 = UITabBarItem(title: L10n.Tabbar.Item._1, image: tabBarImage4, tag: 2)
-        loginUIHosting.tabBarItem = recordUITabBarItem2
+        let navController = UINavigationController(rootViewController: loginUIHosting)
+        navController.setNavigationBarHidden(true, animated: false)
+        navController.tabBarItem = recordUITabBarItem2
         
-        setViewControllers([recordViewController, recordUIHosting, timerUIHosting, loginUIHosting], animated: true)
+        setViewControllers([recordViewController, recordUIHosting, timerUIHosting, navController], animated: true)
     }
+    
+    
 }
